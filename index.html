@@ -107,6 +107,58 @@
       "sameAs": [
         "https://www.airbnb.co.uk/rooms/49535918",
         "https://www.booking.com/hotel/gb/tyddyn-eglwys.en-gb.html"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "40",
+        "reviewCount": "40"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Sarah"},
+          "datePublished": "2025-08",
+          "reviewBody": "This is a very beautiful house and a lovely, peaceful place to stay. Victoria is a responsive host and provides a detailed and informative information pack. The basket of local produce was very welcome, and tailored to our family. The location is very private nestled in beautiful surroundings — great for walking and exploring the local beaches. We all had a wonderful stay; adults, children and dogs!",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Erin"},
+          "datePublished": "2025-08",
+          "reviewBody": "Fantastic holiday in a beautiful home. Lots of home comforts and extras like the hot tub and BBQ allowed us to make the most of the grounds on our family holiday. Secure site for the dogs to sleep play in without worry. Victoria was a very responsive host with lots of help and quick to answer any questions. Would definitely recommend.",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Tj"},
+          "datePublished": "2025-09",
+          "reviewBody": "Phenomenal place!! So beautiful. Walk out and hike in any direction. Great kitchen for cooking. Close to nearby places. Hosts absolutely know what they are doing and keep a beautiful warm and lovely quality home.",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Emma-Jane"},
+          "datePublished": "2025-08",
+          "reviewBody": "We had a fantastic stay! Victoria was very responsive and helpful and the welcome basket was a lovely treat on arrival. There were lots of recommendations on places to go and eat. The area was very peaceful and the kids and dogs loved exploring the gardens and being outside. Thank you again!",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Ben"},
+          "datePublished": "2025-08",
+          "reviewBody": "We had a great stay, the house is in a fantastic location which is lovely and quiet with a fantastic garden that was great for the kids and dog. It's close by to some excellent beaches even one on the estuary within walking distance. The house was nice and big for the 8 of us with some nice touches like the hot tub which was very popular. Victoria was extremely helpful and quick to respond to any questions or issues we had.",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Fran"},
+          "datePublished": "2025-08",
+          "reviewBody": "It's not often that a house completely exceeds expectations but this one certainly did. The setting up a little track is absolutely beautiful with the mountains as a backdrop and the beautiful Harlech beach up the road. The welcome hamper after a 7 hour drive was a very special touch. This was a rare three generation family holiday and the house was perfect for us. Victoria is a great communicator and we only wish we had booked two weeks as one week was not enough!",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        }
       ]
     },
     {
@@ -218,6 +270,7 @@
       <nav class="nav-desktop" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
         <a href="#amenities">Amenities</a>
         <a href="#your-stay">Your Stay</a>
         <a href="#local-area">Local Area</a>
@@ -243,6 +296,7 @@
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
     <a href="#about">About</a>
     <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
     <a href="#amenities">Amenities</a>
     <a href="#your-stay">Your Stay</a>
     <a href="#local-area">Local Area</a>
@@ -491,6 +545,142 @@
           <img src="./assets/own-beddgelert.jpg" alt="Stone bridge and village of Beddgelert beside a rocky stream" loading="lazy" width="800" height="600">
           <span class="gallery-item-label">Beddgelert</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REVIEWS ========== -->
+  <section class="section-padding" id="reviews">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Guest Reviews</span>
+        <h2 class="section-title">What Our Guests Say</h2>
+        <div class="reviews-subtitle-row">
+          <p class="section-subtitle">Rated 5.0 from 40 reviews on Airbnb</p>
+          <div class="reviews-rating-badge">
+            <span class="reviews-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <svg class="airbnb-logo" width="70" height="22" viewBox="0 0 70 22" aria-label="Airbnb">
+              <text x="0" y="17" font-family="'Work Sans', sans-serif" font-weight="700" font-size="16" fill="#FF5A5F">airbnb</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews-carousel-wrapper reveal">
+        <button class="reviews-arrow reviews-arrow--left" aria-label="Previous reviews">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="reviews-carousel" id="reviewsCarousel">
+          <div class="reviews-track" id="reviewsTrack">
+
+            <div class="review-card">
+              <div class="review-card-header">
+                <div class="review-avatar" style="background-color: #2d5a3d;">S</div>
+                <div class="review-meta">
+                  <span class="review-name">Sarah</span>
+                  <span class="review-date">August 2025</span>
+                </div>
+              </div>
+              <div class="review-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">&ldquo;This is a very beautiful house and a lovely, peaceful place to stay. Victoria is a responsive host and provides a detailed and informative information pack. The basket of local produce was very welcome, and tailored to our family. The location is very private nestled in beautiful surroundings &mdash; great for walking and exploring the local beaches. We all had a wonderful stay; adults, children and dogs!&rdquo;</p>
+              <div class="review-source">
+                <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#FF5A5F"/><text x="8" y="11.5" text-anchor="middle" font-size="8" font-weight="700" fill="#fff" font-family="sans-serif">a</text></svg>
+                <span>Airbnb</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-card-header">
+                <div class="review-avatar" style="background-color: #a0724e;">E</div>
+                <div class="review-meta">
+                  <span class="review-name">Erin</span>
+                  <span class="review-date">August 2025</span>
+                </div>
+              </div>
+              <div class="review-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">&ldquo;Fantastic holiday in a beautiful home. Lots of home comforts and extras like the hot tub and BBQ allowed us to make the most of the grounds on our family holiday. Secure site for the dogs to sleep play in without worry. Victoria was a very responsive host with lots of help and quick to answer any questions. Would definitely recommend.&rdquo;</p>
+              <div class="review-source">
+                <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#FF5A5F"/><text x="8" y="11.5" text-anchor="middle" font-size="8" font-weight="700" fill="#fff" font-family="sans-serif">a</text></svg>
+                <span>Airbnb</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-card-header">
+                <div class="review-avatar" style="background-color: #6b9ac4;">T</div>
+                <div class="review-meta">
+                  <span class="review-name">Tj</span>
+                  <span class="review-date">September 2025</span>
+                </div>
+              </div>
+              <div class="review-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">&ldquo;Phenomenal place!! So beautiful. Walk out and hike in any direction. Great kitchen for cooking. Close to nearby places. Hosts absolutely know what they are doing and keep a beautiful warm and lovely quality home.&rdquo;</p>
+              <div class="review-source">
+                <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#FF5A5F"/><text x="8" y="11.5" text-anchor="middle" font-size="8" font-weight="700" fill="#fff" font-family="sans-serif">a</text></svg>
+                <span>Airbnb</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-card-header">
+                <div class="review-avatar" style="background-color: #8a6041;">E</div>
+                <div class="review-meta">
+                  <span class="review-name">Emma-Jane</span>
+                  <span class="review-date">August 2025</span>
+                </div>
+              </div>
+              <div class="review-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">&ldquo;We had a fantastic stay! Victoria was very responsive and helpful and the welcome basket was a lovely treat on arrival. There were lots of recommendations on places to go and eat. The area was very peaceful and the kids and dogs loved exploring the gardens and being outside. Thank you again!&rdquo;</p>
+              <div class="review-source">
+                <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#FF5A5F"/><text x="8" y="11.5" text-anchor="middle" font-size="8" font-weight="700" fill="#fff" font-family="sans-serif">a</text></svg>
+                <span>Airbnb</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-card-header">
+                <div class="review-avatar" style="background-color: #5a9a6d;">B</div>
+                <div class="review-meta">
+                  <span class="review-name">Ben</span>
+                  <span class="review-date">August 2025</span>
+                </div>
+              </div>
+              <div class="review-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">&ldquo;We had a great stay, the house is in a fantastic location which is lovely and quiet with a fantastic garden that was great for the kids and dog. It&rsquo;s close by to some excellent beaches even one on the estuary within walking distance. The house was nice and big for the 8 of us with some nice touches like the hot tub which was very popular. Victoria was extremely helpful and quick to respond to any questions or issues we had.&rdquo;</p>
+              <div class="review-source">
+                <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#FF5A5F"/><text x="8" y="11.5" text-anchor="middle" font-size="8" font-weight="700" fill="#fff" font-family="sans-serif">a</text></svg>
+                <span>Airbnb</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-card-header">
+                <div class="review-avatar" style="background-color: #c99a72;">F</div>
+                <div class="review-meta">
+                  <span class="review-name">Fran</span>
+                  <span class="review-date">August 2025</span>
+                </div>
+              </div>
+              <div class="review-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">&ldquo;It&rsquo;s not often that a house completely exceeds expectations but this one certainly did. The setting up a little track is absolutely beautiful with the mountains as a backdrop and the beautiful Harlech beach up the road. The welcome hamper after a 7 hour drive was a very special touch. This was a rare three generation family holiday and the house was perfect for us. Victoria is a great communicator and we only wish we had booked two weeks as one week was not enough!&rdquo;</p>
+              <div class="review-source">
+                <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#FF5A5F"/><text x="8" y="11.5" text-anchor="middle" font-size="8" font-weight="700" fill="#fff" font-family="sans-serif">a</text></svg>
+                <span>Airbnb</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <button class="reviews-arrow reviews-arrow--right" aria-label="Next reviews">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <div class="reviews-cta reveal">
+        <a href="https://www.airbnb.co.uk/rooms/49535918#reviews" target="_blank" rel="noopener noreferrer" class="reviews-read-all">
+          Read all 40 reviews on Airbnb
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -1434,6 +1624,7 @@
           <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
             <li><a href="#amenities">Amenities</a></li>
             <li><a href="#your-stay">Your Stay</a></li>
             <li><a href="#local-area">Local Area</a></li>
