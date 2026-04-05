@@ -2178,3 +2178,67 @@ a.dining-card:hover {
 .calendar-sync-status.synced {
   color: var(--color-accent);
 }
+
+/* ── Enquiry Form ── */
+.form-row {
+  display: flex;
+  gap: var(--space-3);
+}
+.form-row--thirds {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-3);
+}
+@media (max-width: 480px) {
+  .form-row--thirds {
+    grid-template-columns: 1fr;
+  }
+}
+.form-group select {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid oklch(from var(--color-text) l c h / 0.15);
+  border-radius: 8px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  cursor: pointer;
+}
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px oklch(from var(--color-accent) l c h / 0.15);
+}
+.enquiry-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+.enquiry-btn:hover {
+  background: oklch(from var(--color-accent) calc(l - 0.05) c h);
+  transform: translateY(-1px);
+}
+.enquiry-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}

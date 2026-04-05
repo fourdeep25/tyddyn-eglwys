@@ -469,18 +469,22 @@
   const modalGuests = document.getElementById('modalGuests');
   const modalAccom = document.getElementById('modalAccom');
   const modalTotal = document.getElementById('modalTotal');
-  const stripePayBtn = document.getElementById('stripePayBtn');
-
   bookNowBtn.addEventListener('click', () => {
     const p = calcStayPrice(checkIn, checkOut);
 
-    modalDates.textContent = `${formatDate(checkIn)} → ${formatDate(checkOut)}`;
+    const dateStr = `${formatDate(checkIn)} → ${formatDate(checkOut)}`;
+    modalDates.textContent = dateStr;
     modalGuests.textContent = guestCountVal + (guestCountVal === 1 ? ' guest' : ' guests');
     let breakdown = `${p.nights} nights`;
     if (p.weekdayNights > 0) breakdown += ` · ${p.weekdayNights}×£${WEEKDAY_RATE}`;
     if (p.weekendNights > 0) breakdown += ` · ${p.weekendNights}×£${WEEKEND_RATE}`;
     modalAccom.textContent = `${breakdown} = £${p.total}`;
     modalTotal.textContent = `£${p.total}`;
+
+    // Populate hidden fields for Netlify form
+    document.getElementById('hiddenDates').value = dateStr;
+    document.getElementById('hiddenNights').value = `${p.nights} nights (${p.weekdayNights} weekday, ${p.weekendNights} weekend)`;
+    document.getElementById('hiddenTotal').value = `£${p.total}`;
 
     bookingModal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -496,33 +500,36 @@
     if (e.target === bookingModal) closeModal();
   });
 
-  /* ── Stripe Integration (Demo) ── */
-  stripePayBtn.addEventListener('click', () => {
-    const name = document.getElementById('guestName').value.trim();
-    const email = document.getElementById('guestEmail').value.trim();
+  /* ── Enquiry Form Submission (Netlify Forms) ── */
+  const bookingForm = document.getElementById('bookingForm');
+  bookingForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-    if (!name || !email) {
-      alert('Please fill in your name and email.');
-      return;
-    }
+    const submitBtn = document.getElementById('submitEnquiryBtn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
 
-    // Demo: Initialize Stripe with test key
     try {
-      const stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
-      // In production, this would redirect to a Stripe Checkout session
-      // created by your backend. For demo purposes, show a confirmation.
-      alert(
-        `Demo Booking Confirmed!\n\n` +
-        `Name: ${name}\n` +
-        `Email: ${email}\n` +
-        `Dates: ${formatDate(checkIn)} → ${formatDate(checkOut)}\n` +
-        `Guests: ${guestCountVal}\n` +
-        `Total: £${calcStayPrice(checkIn, checkOut).total}\n\n` +
-        `In production, this would redirect to Stripe Checkout.`
-      );
-      closeModal();
+      const formData = new FormData(bookingForm);
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      if (res.ok) {
+        bookingForm.style.display = 'none';
+        document.getElementById('modalSummary').style.display = 'none';
+        document.getElementById('enquirySuccess').style.display = 'block';
+        bookingForm.reset();
+      } else {
+        throw new Error('Submission failed');
+      }
     } catch (err) {
-      alert('Stripe demo: ' + err.message);
+      alert('Sorry, there was a problem sending your enquiry. Please email us directly at farrarvf@gmail.com');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Enquiry';
     }
   });
 

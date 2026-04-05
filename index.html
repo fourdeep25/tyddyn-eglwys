@@ -22,8 +22,7 @@
   <link rel="stylesheet" href="./base.css">
   <link rel="stylesheet" href="./style.css">
 
-  <!-- Stripe (demo) -->
-  <script src="https://js.stripe.com/v3/"></script>
+
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -48,13 +47,12 @@
     "image": "./assets/hero-landscape.png",
     "priceRange": "From £300/night",
     "numberOfRooms": 4,
-    "petsAllowed": true,
+    "petsAllowed": false,
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Hot Tub", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Free Parking", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Mountain Views", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Pet Friendly", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Fire Pit", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "EV Charger", "value": true }
     ],
@@ -416,11 +414,7 @@
           <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="14" width="28" height="14" rx="3"/><circle cx="12" cy="28" r="3"/><circle cx="28" cy="28" r="3"/><path d="M10 14l3-6h14l3 6"/></svg>
           <span class="amenity-name">Free Parking</span>
         </div>
-        <!-- Pet Friendly -->
-        <div class="amenity-card">
-          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><ellipse cx="14" cy="12" rx="3" ry="4"/><ellipse cx="26" cy="12" rx="3" ry="4"/><ellipse cx="8" cy="20" rx="2.5" ry="3.5"/><ellipse cx="32" cy="20" rx="2.5" ry="3.5"/><path d="M13 26c0 4 3 8 7 8s7-4 7-8c0-3-3-6-7-6s-7 3-7 6z"/></svg>
-          <span class="amenity-name">Pet Friendly</span>
-        </div>
+
         <!-- Kitchen -->
         <div class="amenity-card">
           <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="8" y="8" width="24" height="24" rx="2"/><line x1="8" y1="20" x2="32" y2="20"/><circle cx="16" cy="27" r="2"/><circle cx="24" cy="27" r="2"/><path d="M16 14h8"/></svg>
@@ -521,29 +515,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Dogs -->
-        <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
-            <div class="accordion-header-content">
-              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><ellipse cx="8" cy="8" rx="2" ry="3"/><ellipse cx="16" cy="8" rx="2" ry="3"/><ellipse cx="4" cy="14" rx="1.5" ry="2.5"/><ellipse cx="20" cy="14" rx="1.5" ry="2.5"/><path d="M8 19c0 3 2 5 4 5s4-2 4-5c0-2-2-4-4-4s-4 2-4 4z"/></svg>
-              <span>Dogs</span>
-            </div>
-            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="accordion-body">
-            <div class="accordion-body-inner">
-              <ul>
-                <li>Maximum <strong>2 dogs</strong> — ground floor only, not on furniture (including sofas).</li>
-                <li>Keep dogs on a lead if they’re capable of jumping walls — the property is surrounded by farming fields.</li>
-                <li><strong>Lambing season:</strong> November to June — please be especially vigilant.</li>
-                <li>Keep the entrance gate closed at all times to prevent livestock entering.</li>
-                <li>A dog pen is available in the utility room.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
         <!-- Hot Tub -->
         <div class="accordion-item">
           <button class="accordion-header" aria-expanded="false">
@@ -659,7 +630,7 @@
           </div>
           <div class="attraction-card-body">
             <h3>Estuary Beaches</h3>
-            <p>Golden sands stretch for miles along the Dwyryd estuary and Cardigan Bay coast. Perfect for sunset walks, dog-friendly beaches, and Shell Island — one of Wales's best-kept secrets.</p>
+            <p>Golden sands stretch for miles along the Dwyryd estuary and Cardigan Bay coast. Perfect for sunset walks, Shell Island — one of Wales's best-kept secrets.</p>
             <span class="attraction-distance">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               5 km away
@@ -1201,7 +1172,7 @@
           </div>
           <p class="min-stay-warning" id="minStayWarning" style="display:none; font-size: var(--text-xs); color: #c0392b; text-align: center; margin-top: var(--space-2);">Minimum stay is 3 nights</p>
 
-          <button class="book-now-btn" id="bookNowBtn" disabled>Book Now</button>
+          <button class="book-now-btn" id="bookNowBtn" disabled>Send Enquiry</button>
           <p style="font-size: var(--text-xs); color: var(--color-text-faint); text-align: center; margin-top: var(--space-3);">Check-in: 4–6pm · Check-out: by 10am · Min 3 nights</p>
         </div>
       </div>
@@ -1265,8 +1236,7 @@
           <ul>
             <li><a href="#booking">Check-in: 4:00 PM</a></li>
             <li><a href="#booking">Check-out: 10:00 AM</a></li>
-            <li><a href="#booking">Pets welcome</a></li>
-            <li><a href="#booking">No smoking indoors</a></li>
+                        <li><a href="#booking">No smoking indoors</a></li>
             <li><a href="#booking">Max 8 guests</a></li>
           </ul>
         </div>
@@ -1299,45 +1269,103 @@
     </div>
   </footer>
 
-  <!-- ========== BOOKING MODAL ========== -->
+  <!-- ========== BOOKING ENQUIRY MODAL ========== -->
   <div class="modal-overlay" id="bookingModal">
     <div class="modal" style="position: relative;">
       <button class="modal-close" id="modalClose" aria-label="Close modal">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
-      <h2>Complete Your Booking</h2>
-      <p class="modal-subtitle">You're almost there — fill in your details below.</p>
+      <h2>Enquire About Your Stay</h2>
+      <p class="modal-subtitle">Send us your details and we'll confirm availability and arrange your booking.</p>
 
       <div class="modal-summary" id="modalSummary">
         <div class="modal-summary-line"><span>Dates</span><span id="modalDates">—</span></div>
         <div class="modal-summary-line"><span>Guests</span><span id="modalGuests">—</span></div>
         <div class="modal-summary-line"><span>Accommodation</span><span id="modalAccom">—</span></div>
-        <div class="modal-summary-total"><span>Total</span><span id="modalTotal">—</span></div>
+        <div class="modal-summary-total"><span>Estimated Total</span><span id="modalTotal">—</span></div>
       </div>
 
-      <form id="bookingForm" onsubmit="return false;">
+      <!-- Hidden fields for Netlify -->
+      <form id="bookingForm" name="booking-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="booking-enquiry">
+        <p class="hidden" style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <input type="hidden" name="dates" id="hiddenDates">
+        <input type="hidden" name="nights" id="hiddenNights">
+        <input type="hidden" name="estimated-total" id="hiddenTotal">
+
         <div class="form-group">
-          <label for="guestName">Full Name</label>
-          <input type="text" id="guestName" required placeholder="Your name">
+          <label for="guestName">Full Name *</label>
+          <input type="text" id="guestName" name="name" required placeholder="Your name">
         </div>
         <div class="form-group">
-          <label for="guestEmail">Email</label>
-          <input type="email" id="guestEmail" required placeholder="your@email.com">
+          <label for="guestEmail">Email *</label>
+          <input type="email" id="guestEmail" name="email" required placeholder="your@email.com">
         </div>
         <div class="form-group">
-          <label for="guestPhone">Phone</label>
-          <input type="tel" id="guestPhone" placeholder="+44 7700 000000">
+          <label for="guestPhone">Phone *</label>
+          <input type="tel" id="guestPhone" name="phone" required placeholder="+44 7700 000000">
         </div>
+
+        <div class="form-row form-row--thirds">
+          <div class="form-group">
+            <label for="numAdults">Adults *</label>
+            <select id="numAdults" name="adults" required>
+              <option value="" disabled selected>Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="numChildren">Children (0–15)</label>
+            <select id="numChildren" name="children-0-15">
+              <option value="0" selected>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="numTeens">Teenagers (16–21)</label>
+            <select id="numTeens" name="teenagers-16-21">
+              <option value="0" selected>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+        </div>
+
         <div class="form-group">
           <label for="guestMessage">Message (optional)</label>
-          <textarea id="guestMessage" placeholder="Any special requests or questions?"></textarea>
+          <textarea id="guestMessage" name="message" placeholder="Any special requests or questions?"></textarea>
         </div>
-        <button type="button" class="stripe-btn" id="stripePayBtn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-          Pay with Stripe
+
+        <button type="submit" class="enquiry-btn" id="submitEnquiryBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
+          Send Enquiry
         </button>
-        <p class="stripe-demo-note">Demo mode — this uses a Stripe test key. No real charges will be made.</p>
+        <p style="font-size: var(--text-xs); color: var(--color-text-faint); text-align: center; margin-top: var(--space-3);">We'll respond within 24 hours to confirm your booking.</p>
       </form>
+
+      <!-- Success message (hidden by default) -->
+      <div id="enquirySuccess" style="display:none; text-align:center; padding: var(--space-8) 0;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" style="margin-bottom: var(--space-4);"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        <h3 style="margin-bottom: var(--space-2);">Enquiry Sent</h3>
+        <p style="color: var(--color-text-muted);">Thank you! Victoria and Matt will be in touch within 24 hours to confirm your dates and arrange your stay.</p>
+        <button type="button" class="btn-primary" onclick="document.getElementById('bookingModal').classList.remove('active'); document.body.style.overflow=''; document.getElementById('enquirySuccess').style.display='none'; document.getElementById('bookingForm').style.display='';" style="margin-top: var(--space-6);">Close</button>
+      </div>
     </div>
   </div>
 
