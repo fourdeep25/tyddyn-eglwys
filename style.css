@@ -2284,3 +2284,15 @@ a.dining-card:hover {
 .form-group select option:disabled {
   color: oklch(from var(--color-text) l c h / 0.3);
 }
+
+/* ── Gallery Video Items ── */
+.gallery-item--video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+}
+.gallery-item--video {
+  cursor: default;
+}
