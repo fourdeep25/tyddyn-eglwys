@@ -544,10 +544,78 @@
     if (e.target === bookingModal) closeModal();
   });
 
+  /* ── Guest Count Validation (max 8 total) ── */
+  const MAX_OCCUPANCY = 8;
+  const numAdults = document.getElementById('numAdults');
+  const numChildren = document.getElementById('numChildren');
+  const numTeens = document.getElementById('numTeens');
+  const guestIndicator = document.getElementById('guestCountIndicator');
+  const hiddenTotalGuests = document.getElementById('hiddenTotalGuests');
+
+  function getGuestTotal() {
+    const adults = parseInt(numAdults.value) || 0;
+    const children = parseInt(numChildren.value) || 0;
+    const teens = parseInt(numTeens.value) || 0;
+    return { adults, children, teens, total: adults + children + teens };
+  }
+
+  function updateGuestOptions() {
+    const g = getGuestTotal();
+    const remaining = MAX_OCCUPANCY - g.total;
+
+    // Update hidden field
+    if (hiddenTotalGuests) hiddenTotalGuests.value = g.total > 0 ? `${g.total} (${g.adults} adults, ${g.children} children, ${g.teens} teenagers)` : '';
+
+    // Disable options that would exceed max occupancy
+    [numAdults, numChildren, numTeens].forEach(select => {
+      const currentVal = parseInt(select.value) || 0;
+      const othersTotal = g.total - currentVal;
+      const maxForThis = MAX_OCCUPANCY - othersTotal;
+
+      Array.from(select.options).forEach(opt => {
+        const optVal = parseInt(opt.value);
+        if (isNaN(optVal)) return; // skip "Select" placeholder
+        opt.disabled = optVal > maxForThis;
+      });
+    });
+
+    // Update indicator
+    if (guestIndicator) {
+      if (g.total === 0 || isNaN(g.adults) || g.adults === 0) {
+        guestIndicator.textContent = '';
+        guestIndicator.className = 'guest-count-indicator';
+      } else if (g.total > MAX_OCCUPANCY) {
+        guestIndicator.textContent = `Maximum occupancy is ${MAX_OCCUPANCY} guests. Please reduce your numbers.`;
+        guestIndicator.className = 'guest-count-indicator guest-count-over';
+      } else if (remaining === 0) {
+        guestIndicator.textContent = `${g.total} of ${MAX_OCCUPANCY} guests — property full`;
+        guestIndicator.className = 'guest-count-indicator guest-count-full';
+      } else {
+        guestIndicator.textContent = `${g.total} of ${MAX_OCCUPANCY} guests — ${remaining} place${remaining !== 1 ? 's' : ''} remaining`;
+        guestIndicator.className = 'guest-count-indicator guest-count-ok';
+      }
+    }
+  }
+
+  if (numAdults) numAdults.addEventListener('change', updateGuestOptions);
+  if (numChildren) numChildren.addEventListener('change', updateGuestOptions);
+  if (numTeens) numTeens.addEventListener('change', updateGuestOptions);
+
   /* ── Enquiry Form Submission (Netlify Forms) ── */
   const bookingForm = document.getElementById('bookingForm');
   bookingForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    // Validate guest count before submitting
+    const g = getGuestTotal();
+    if (g.total > MAX_OCCUPANCY) {
+      alert(`Maximum occupancy is ${MAX_OCCUPANCY} guests. You have selected ${g.total}. Please reduce your numbers.`);
+      return;
+    }
+    if (!g.adults || g.adults === 0) {
+      alert('Please select the number of adults.');
+      return;
+    }
 
     const submitBtn = document.getElementById('submitEnquiryBtn');
     submitBtn.disabled = true;

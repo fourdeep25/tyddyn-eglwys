@@ -2255,3 +2255,32 @@ a.dining-card:hover {
   cursor: not-allowed;
   transform: none;
 }
+
+/* ── Guest Count Validation ── */
+.guest-count-indicator {
+  font-size: var(--text-xs);
+  text-align: center;
+  margin-top: var(--space-1);
+  margin-bottom: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  min-height: 1.5em;
+}
+.guest-count-ok {
+  color: var(--color-accent);
+  background: oklch(from var(--color-accent) l c h / 0.08);
+}
+.guest-count-full {
+  color: #a0724e;
+  background: oklch(0.7 0.1 60 / 0.1);
+  font-weight: 500;
+}
+.guest-count-over {
+  color: #c0392b;
+  background: oklch(0.6 0.15 25 / 0.1);
+  font-weight: 600;
+}
+.form-group select option:disabled {
+  color: oklch(from var(--color-text) l c h / 0.3);
+}
