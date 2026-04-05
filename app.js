@@ -184,21 +184,41 @@
   let guestCountVal = 2;
   let selectingCheckOut = false;
 
-  // Blocked dates — populated from Airbnb iCal via Netlify function
+  // Blocked dates — populated from Airbnb iCal + temporary holds via Netlify functions
   let blockedDates = new Set();
   let calendarSynced = false;
 
-  // Fetch availability from Airbnb via serverless function
+  // Fetch availability from Airbnb + held dates
   async function syncCalendar() {
     try {
-      const res = await fetch('/.netlify/functions/calendar-sync');
-      if (!res.ok) throw new Error('Sync failed');
-      const data = await res.json();
-      if (data.blockedDates && data.blockedDates.length > 0) {
-        blockedDates = new Set(data.blockedDates);
+      // Fetch Airbnb calendar and held dates in parallel
+      const [calRes, holdRes] = await Promise.allSettled([
+        fetch('/.netlify/functions/calendar-sync'),
+        fetch('/.netlify/functions/hold-dates')
+      ]);
+
+      const allBlocked = new Set();
+
+      // Process Airbnb dates
+      if (calRes.status === 'fulfilled' && calRes.value.ok) {
+        const calData = await calRes.value.json();
+        if (calData.blockedDates) {
+          calData.blockedDates.forEach(d => allBlocked.add(d));
+        }
+      }
+
+      // Process temporarily held dates
+      if (holdRes.status === 'fulfilled' && holdRes.value.ok) {
+        const holdData = await holdRes.value.json();
+        if (holdData.heldDates) {
+          holdData.heldDates.forEach(d => allBlocked.add(d));
+        }
+      }
+
+      if (allBlocked.size > 0) {
+        blockedDates = allBlocked;
         calendarSynced = true;
-        renderCalendar(); // Re-render with real availability
-        // Update sync indicator
+        renderCalendar();
         const indicator = document.getElementById('syncIndicator');
         if (indicator) {
           indicator.textContent = 'Live availability · Synced with Airbnb';
@@ -206,12 +226,36 @@
         }
       }
     } catch (e) {
-      // Graceful fallback — show all dates as available
       console.log('Calendar sync unavailable, showing all dates as available');
       const indicator = document.getElementById('syncIndicator');
       if (indicator) {
         indicator.textContent = 'Availability may not be up to date';
       }
+    }
+  }
+
+  // Hold dates temporarily after successful enquiry (6 hours)
+  async function holdDates(ciDate, coDate, name) {
+    try {
+      await fetch('/.netlify/functions/hold-dates', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ checkIn: ciDate, checkOut: coDate, guestName: name })
+      });
+      // Immediately add to local blockedDates so calendar updates
+      const start = new Date(ciDate + 'T00:00:00');
+      const end = new Date(coDate + 'T00:00:00');
+      const d = new Date(start);
+      while (d < end) {
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        blockedDates.add(`${y}-${m}-${day}`);
+        d.setDate(d.getDate() + 1);
+      }
+      renderCalendar();
+    } catch (e) {
+      console.log('Could not hold dates:', e.message);
     }
   }
 
@@ -518,6 +562,12 @@
       });
 
       if (res.ok) {
+        // Hold dates for 6 hours while hosts process the enquiry
+        const guestName = formData.get('name') || 'Guest';
+        if (checkIn && checkOut) {
+          holdDates(checkIn, checkOut, guestName);
+        }
+
         bookingForm.style.display = 'none';
         document.getElementById('modalSummary').style.display = 'none';
         document.getElementById('enquirySuccess').style.display = 'block';
