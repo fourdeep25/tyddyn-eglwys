@@ -84,19 +84,23 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  /* ── Gallery Lightbox ── */
+  /* ── Gallery Lightbox (delegated for filter compatibility) ── */
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxClose = lightbox.querySelector('.lightbox-close');
 
-  document.querySelectorAll('[data-lightbox]').forEach(item => {
-    item.addEventListener('click', () => {
+  // Use event delegation so lightbox works even after filter changes
+  const galleryGrid = document.querySelector('.gallery-grid');
+  if (galleryGrid) {
+    galleryGrid.addEventListener('click', (e) => {
+      const item = e.target.closest('[data-lightbox]');
+      if (!item || item.classList.contains('gallery-hidden')) return;
       const src = item.getAttribute('data-lightbox');
       lightboxImg.src = src;
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
     });
-  });
+  }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
@@ -114,12 +118,63 @@
     }
   });
 
+  /* ── Gallery Filters ── */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      // Update active button
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Filter gallery items
+      galleryItems.forEach(item => {
+        const category = item.getAttribute('data-category');
+        const matches = filter === 'all' || category === filter;
+
+        if (matches) {
+          // Show: remove hidden, restore to grid flow
+          item.classList.remove('gallery-hidden');
+          item.classList.add('gallery-visible');
+        } else {
+          // Hide with animation then collapse
+          item.classList.remove('gallery-visible');
+          item.classList.add('gallery-hidden');
+        }
+      });
+    });
+  });
+
   /* ============================================================
      BOOKING CALENDAR
      ============================================================ */
-  const PRICE_PER_NIGHT = 185;
-  const CLEANING_FEE = 75;
+  const WEEKDAY_RATE = 300;  // Sun–Thu
+  const WEEKEND_RATE = 350;  // Fri & Sat
+  const MIN_NIGHTS = 3;
   const MAX_GUESTS = 8;
+
+  // Calculate pricing based on day-of-week per night
+  function calcStayPrice(ciStr, coStr) {
+    if (!ciStr || !coStr) return { weekdayNights: 0, weekendNights: 0, total: 0, nights: 0 };
+    const ci = new Date(ciStr + 'T00:00:00');
+    const co = new Date(coStr + 'T00:00:00');
+    let weekdayN = 0, weekendN = 0;
+    const d = new Date(ci);
+    while (d < co) {
+      const dow = d.getDay(); // 0=Sun … 6=Sat
+      if (dow === 5 || dow === 6) { weekendN++; } else { weekdayN++; }
+      d.setDate(d.getDate() + 1);
+    }
+    return {
+      weekdayNights: weekdayN,
+      weekendNights: weekendN,
+      total: weekdayN * WEEKDAY_RATE + weekendN * WEEKEND_RATE,
+      nights: weekdayN + weekendN
+    };
+  }
 
   // State
   let currentMonth = 3; // April (0-indexed)
@@ -328,6 +383,14 @@
     return Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
   }
 
+  const weekdayLine = document.getElementById('weekdayLine');
+  const weekendLine = document.getElementById('weekendLine');
+  const weekdayLabel = document.getElementById('weekdayLabel');
+  const weekdayCost = document.getElementById('weekdayCost');
+  const weekendLabel = document.getElementById('weekendLabel');
+  const weekendCost = document.getElementById('weekendCost');
+  const minStayWarning = document.getElementById('minStayWarning');
+
   function updateBookingSummary() {
     if (checkIn) {
       checkinDisplay.textContent = formatDate(checkIn);
@@ -348,14 +411,36 @@
     const nights = getNights();
     if (nights > 0) {
       priceBreakdown.style.display = 'block';
-      const accom = PRICE_PER_NIGHT * nights;
-      const total = accom + CLEANING_FEE;
-      nightsLabel.textContent = `£${PRICE_PER_NIGHT} × ${nights} night${nights > 1 ? 's' : ''}`;
-      nightsCost.textContent = `£${accom}`;
-      totalCost.textContent = `£${total}`;
-      bookNowBtn.disabled = false;
+      const p = calcStayPrice(checkIn, checkOut);
+
+      nightsLabel.textContent = `${p.nights} night${p.nights > 1 ? 's' : ''}`;
+      nightsCost.textContent = `£${p.total}`;
+
+      if (p.weekdayNights > 0) {
+        weekdayLine.style.display = '';
+        weekdayLabel.textContent = `${p.weekdayNights} × £${WEEKDAY_RATE} (Sun–Thu)`;
+        weekdayCost.textContent = `£${p.weekdayNights * WEEKDAY_RATE}`;
+      } else { weekdayLine.style.display = 'none'; }
+
+      if (p.weekendNights > 0) {
+        weekendLine.style.display = '';
+        weekendLabel.textContent = `${p.weekendNights} × £${WEEKEND_RATE} (Fri–Sat)`;
+        weekendCost.textContent = `£${p.weekendNights * WEEKEND_RATE}`;
+      } else { weekendLine.style.display = 'none'; }
+
+      totalCost.textContent = `£${p.total}`;
+
+      // Minimum stay enforcement
+      if (nights < MIN_NIGHTS) {
+        minStayWarning.style.display = 'block';
+        bookNowBtn.disabled = true;
+      } else {
+        minStayWarning.style.display = 'none';
+        bookNowBtn.disabled = false;
+      }
     } else {
       priceBreakdown.style.display = 'none';
+      minStayWarning.style.display = 'none';
       bookNowBtn.disabled = true;
     }
   }
@@ -370,14 +455,15 @@
   const stripePayBtn = document.getElementById('stripePayBtn');
 
   bookNowBtn.addEventListener('click', () => {
-    const nights = getNights();
-    const accom = PRICE_PER_NIGHT * nights;
-    const total = accom + CLEANING_FEE;
+    const p = calcStayPrice(checkIn, checkOut);
 
     modalDates.textContent = `${formatDate(checkIn)} → ${formatDate(checkOut)}`;
     modalGuests.textContent = guestCountVal + (guestCountVal === 1 ? ' guest' : ' guests');
-    modalAccom.textContent = `£${PRICE_PER_NIGHT} × ${nights} nights = £${accom}`;
-    modalTotal.textContent = `£${total}`;
+    let breakdown = `${p.nights} nights`;
+    if (p.weekdayNights > 0) breakdown += ` · ${p.weekdayNights}×£${WEEKDAY_RATE}`;
+    if (p.weekendNights > 0) breakdown += ` · ${p.weekendNights}×£${WEEKEND_RATE}`;
+    modalAccom.textContent = `${breakdown} = £${p.total}`;
+    modalTotal.textContent = `£${p.total}`;
 
     bookingModal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -414,7 +500,7 @@
         `Email: ${email}\n` +
         `Dates: ${formatDate(checkIn)} → ${formatDate(checkOut)}\n` +
         `Guests: ${guestCountVal}\n` +
-        `Total: £${PRICE_PER_NIGHT * getNights() + CLEANING_FEE}\n\n` +
+        `Total: £${calcStayPrice(checkIn, checkOut).total}\n\n` +
         `In production, this would redirect to Stripe Checkout.`
       );
       closeModal();
@@ -423,8 +509,81 @@
     }
   });
 
+  /* ── Activities Tab Toggle ── */
+  const activityBtns = document.querySelectorAll('.activities-toggle-btn');
+  const cyclingRoutes = document.getElementById('cyclingRoutes');
+  const walkingRoutes = document.getElementById('walkingRoutes');
+
+  if (activityBtns.length && cyclingRoutes && walkingRoutes) {
+    activityBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.getAttribute('data-activity-tab');
+
+        // Update button states
+        activityBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        // Fade out current, show new
+        const showing = tab === 'cycling' ? cyclingRoutes : walkingRoutes;
+        const hiding = tab === 'cycling' ? walkingRoutes : cyclingRoutes;
+
+        hiding.classList.add('activities-routes--fade-out');
+
+        setTimeout(() => {
+          hiding.classList.add('activities-routes--hidden');
+          hiding.classList.remove('activities-routes--fade-out');
+
+          showing.classList.remove('activities-routes--hidden');
+          // Trigger reflow then fade in
+          showing.offsetHeight;
+          showing.style.opacity = '1';
+
+          // Re-observe newly visible reveal elements
+          showing.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+            revealObserver.observe(el);
+          });
+        }, 300);
+      });
+    });
+  }
+
   /* ── Initialize ── */
   renderCalendar();
   updateGuestDisplay();
+
+  /* ============================================================
+     ACCORDION — Your Stay Section
+     ============================================================ */
+  document.querySelectorAll('.accordion-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      const body = btn.nextElementSibling;
+
+      // Close all others in the same accordion
+      const accordion = btn.closest('.accordion');
+      if (accordion) {
+        accordion.querySelectorAll('.accordion-header').forEach(otherBtn => {
+          if (otherBtn !== btn) {
+            otherBtn.setAttribute('aria-expanded', 'false');
+            const otherBody = otherBtn.nextElementSibling;
+            if (otherBody) otherBody.style.maxHeight = null;
+          }
+        });
+      }
+
+      // Toggle clicked item
+      if (isExpanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        body.style.maxHeight = null;
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
 
 })();

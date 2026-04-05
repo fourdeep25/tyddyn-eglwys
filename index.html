@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tyddyn Eglwys — Grade II Listed Retreat in Snowdonia</title>
-  <meta name="description" content="Tyddyn Eglwys is a beautifully restored Grade II listed former rectory dating to c.1830, nestled in the heart of Snowdonia National Park. Sleeps 8, with hot tub, mountain views, and direct access to Eryri's finest landscapes.">
+  <meta name="description" content="Tyddyn Eglwys is a beautifully restored Grade II listed former rectory built in 1839, nestled in the heart of Snowdonia National Park. Sleeps 8, with hot tub, mountain views, and direct access to Eryri's finest landscapes.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Tyddyn Eglwys — A Grade II Listed Retreat in Snowdonia">
-  <meta property="og:description" content="A beautifully restored former Welsh rectory dating to c.1830. 4 bedrooms, hot tub, mountain views. In the heart of Eryri National Park.">
-  <meta property="og:image" content="./assets/hero-landscape.png">
+  <meta property="og:description" content="A beautifully restored former Welsh rectory built in 1839. 4 bedrooms, hot tub, mountain views. In the heart of Eryri National Park.">
+  <meta property="og:image" content="./assets/own-house-front-summer.jpg">
   <meta property="og:type" content="website">
 
   <!-- Fonts -->
@@ -31,7 +31,7 @@
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
     "name": "Tyddyn Eglwys",
-    "description": "Grade II listed former Welsh rectory dating to c.1830, nestled in the heart of Snowdonia/Eryri National Park.",
+    "description": "Grade II listed former Welsh rectory built in 1839, nestled in the heart of Snowdonia/Eryri National Park.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Ynys",
@@ -46,7 +46,7 @@
       "longitude": -4.0475
     },
     "image": "./assets/hero-landscape.png",
-    "priceRange": "From £185/night",
+    "priceRange": "From £300/night",
     "numberOfRooms": 4,
     "petsAllowed": true,
     "amenityFeature": [
@@ -55,7 +55,8 @@
       { "@type": "LocationFeatureSpecification", "name": "Free Parking", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Mountain Views", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Pet Friendly", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Wood-Burning Stove", "value": true }
+      { "@type": "LocationFeatureSpecification", "name": "Fire Pit", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "EV Charger", "value": true }
     ],
     "checkinTime": "16:00",
     "checkoutTime": "10:00"
@@ -71,13 +72,31 @@
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
       <a href="#" class="logo" aria-label="Tyddyn Eglwys — Home">
-        <!-- SVG Logo Mark: Welsh stone arch / mountain silhouette -->
-        <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M18 4C12 4 7 12 7 20c0 4 2 7 4 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          <path d="M18 4c6 0 11 8 11 16 0 4-2 7-4 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          <path d="M11 29h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          <path d="M18 20v9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
-          <circle cx="18" cy="16" r="2" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.6"/>
+        <svg class="logo-mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <clipPath id="hLogoClip"><circle cx="100" cy="100" r="82"/></clipPath>
+            <linearGradient id="hLogSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6b9ac4"/><stop offset="60%" stop-color="#a8cce0"/><stop offset="100%" stop-color="#cde4d0"/></linearGradient>
+          </defs>
+          <circle cx="100" cy="100" r="98" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="100" cy="100" r="92" fill="#f5f1eb"/>
+          <g clip-path="url(#hLogoClip)">
+            <rect x="0" y="0" width="200" height="200" fill="url(#hLogSky)"/>
+            <ellipse cx="100" cy="168" rx="110" ry="48" fill="#7aaa70"/><ellipse cx="100" cy="175" rx="100" ry="40" fill="#8aba80"/><ellipse cx="100" cy="182" rx="95" ry="35" fill="#9ac890"/>
+            <g><ellipse cx="35" cy="115" rx="18" ry="24" fill="#3a7a3a"/><ellipse cx="28" cy="120" rx="14" ry="20" fill="#2d6a2d"/><ellipse cx="42" cy="118" rx="12" ry="18" fill="#4a8a4a"/></g>
+            <g><ellipse cx="165" cy="115" rx="18" ry="24" fill="#3a7a3a"/><ellipse cx="172" cy="120" rx="14" ry="20" fill="#2d6a2d"/><ellipse cx="158" cy="118" rx="12" ry="18" fill="#4a8a4a"/></g>
+            <g>
+              <rect x="60" y="90" width="80" height="28" fill="#7a7060"/>
+              <rect x="60" y="118" width="80" height="36" fill="#e8dcc8"/>
+              <polygon points="57,90 100,68 143,90" fill="#3a3530"/>
+              <rect x="66" y="64" width="10" height="20" fill="#5a5550"/><rect x="64" y="62" width="14" height="3" fill="#4a4540"/>
+              <rect x="124" y="64" width="10" height="20" fill="#5a5550"/><rect x="122" y="62" width="14" height="3" fill="#4a4540"/>
+              <rect x="67" y="94" width="9" height="13" fill="#c8d4dc"/><rect x="85" y="94" width="9" height="13" fill="#c8d4dc"/>
+              <rect x="106" y="94" width="9" height="13" fill="#c8d4dc"/><rect x="124" y="94" width="9" height="13" fill="#c8d4dc"/>
+              <rect x="65" y="123" width="13" height="18" fill="#c8d4dc"/><rect x="122" y="123" width="13" height="18" fill="#c8d4dc"/>
+              <rect x="94" y="125" width="12" height="29" rx="1" fill="#2d5a3d"/>
+            </g>
+            <g transform="translate(90,147)"><ellipse cx="0" cy="0" rx="12" ry="6" fill="#1a1a1a"/><ellipse cx="-11" cy="-3" rx="4.5" ry="3.5" fill="#1a1a1a"/><rect x="-7" y="4" width="2.5" height="8" fill="#1a1a1a"/><rect x="-2" y="4" width="2.5" height="8" fill="#1a1a1a"/><rect x="4" y="4" width="2.5" height="8" fill="#1a1a1a"/><rect x="8" y="4" width="2.5" height="8" fill="#1a1a1a"/></g>
+          </g>
         </svg>
         <span class="logo-text">Tyddyn Eglwys</span>
       </a>
@@ -86,7 +105,10 @@
         <a href="#about">About</a>
         <a href="#gallery">Gallery</a>
         <a href="#amenities">Amenities</a>
+        <a href="#your-stay">Your Stay</a>
         <a href="#local-area">Local Area</a>
+        <a href="#activities">Activities</a>
+        <a href="#dining">Dining</a>
         <a href="#booking">Book</a>
       </nav>
 
@@ -108,14 +130,17 @@
     <a href="#about">About</a>
     <a href="#gallery">Gallery</a>
     <a href="#amenities">Amenities</a>
+    <a href="#your-stay">Your Stay</a>
     <a href="#local-area">Local Area</a>
+    <a href="#activities">Activities</a>
+    <a href="#dining">Dining</a>
     <a href="#booking">Book</a>
   </nav>
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
     <div class="hero-image">
-      <img src="./assets/hero-landscape.png" alt="Panoramic view of Tyddyn Eglwys with Snowdonia mountains in the background" loading="eager" width="1600" height="900">
+      <img src="./assets/own-house-front-summer.jpg" alt="The stone rectory front of Tyddyn Eglwys in summer — hydrangeas in bloom, sage green door, and lush gardens surrounding the Grade II listed building" loading="eager" width="1600" height="900">
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -140,12 +165,14 @@
 
       <div class="about-grid">
         <div class="about-image reveal">
-          <img src="./assets/exterior.png" alt="Exterior of Tyddyn Eglwys, a stone-built Grade II listed rectory" loading="lazy" width="800" height="600">
+          <img src="./assets/own-front-entrance.jpg" alt="Front entrance of Tyddyn Eglwys showing the original Snowdonian stone walls, slate porch, and hydrangea plantings at dusk" loading="lazy" width="800" height="600">
         </div>
         <div class="about-text reveal reveal-delay-1">
-          <p>Tyddyn Eglwys is a Grade II listed former rectory dating to circa 1830, set in the quiet hamlet of Ynys, near Talsarnau in Gwynedd. Built from local Snowdonian stone, this handsome building has served its community for nearly two centuries — and now welcomes guests seeking a deeper connection with the Welsh landscape.</p>
-          <p>The rectory has been thoughtfully restored to preserve its historic character — original stone walls, deep windowsills, and period features — while offering all the comforts of a modern retreat. A wood-burning stove warms the living room on cooler evenings, while the private hot tub offers views across the Dwyryd estuary to the mountains beyond.</p>
+          <p>Tyddyn Eglwys — <em>tyddyn</em> meaning small farm, <em>eglwys</em> meaning church — was built in 1839 as the home of the clergy who tended <strong>Llanfihangel y Traethau</strong>, the Church of St Michael of the Shores, which still stands at the top of the lane. The church itself is a pre-Reformation building dating to 1137–1170, centuries older than Harlech Castle, with a rare inscribed stone in its graveyard marking its ancient origins.</p>
+          <p>The hamlet of <strong>Ynys</strong> (pronounced "Unus") takes its name from the Welsh word for island — once surrounded by water at high tide, this was a busy port and ship-building centre on the Dwyryd estuary. Today the tidal marshes and mountain views remain, offering a landscape that has barely changed in centuries.</p>
+          <p>In 2001, Victoria and Matt purchased the rectory and poured hundreds of hours into its restoration — preserving original stone walls, deep windowsills, and period features while adding the comforts of a modern retreat. The private hot tub offers views across the estuary to the mountains beyond, and on clear nights the Milky Way unfolds overhead.</p>
           <p>With Eryri (Snowdonia) National Park on your doorstep, Portmeirion a short drive away, and Harlech's castle perched above some of Wales's finest beaches, Tyddyn Eglwys is the perfect base for exploring the very best of North Wales.</p>
+          <p class="about-motto"><em>'Byw yn y foment'</em> — live in the moment.</p>
 
           <div class="about-facts">
             <div class="about-fact">
@@ -161,7 +188,7 @@
               <span class="about-fact-label">Bathrooms</span>
             </div>
             <div class="about-fact">
-              <span class="about-fact-number">c.1830</span>
+              <span class="about-fact-number">1839</span>
               <span class="about-fact-label">Built</span>
             </div>
           </div>
@@ -179,26 +206,176 @@
         <p class="section-subtitle">Original character meets contemporary comfort across four bedrooms, spacious living areas, and private grounds.</p>
       </div>
 
+      <!-- Filter Bar -->
+      <div class="gallery-filters reveal">
+        <button class="filter-btn active" data-filter="all">All <span class="filter-count">37</span></button>
+        <button class="filter-btn" data-filter="house">The House <span class="filter-count">7</span></button>
+        <button class="filter-btn" data-filter="interiors">Interiors <span class="filter-count">5</span></button>
+        <button class="filter-btn" data-filter="gardens">Gardens <span class="filter-count">8</span></button>
+        <button class="filter-btn" data-filter="landscape">Landscape <span class="filter-count">7</span></button>
+        <button class="filter-btn" data-filter="coast">Beaches &amp; Coast <span class="filter-count">5</span></button>
+        <button class="filter-btn" data-filter="attractions">Attractions <span class="filter-count">5</span></button>
+      </div>
+
       <div class="gallery-grid reveal">
-        <div class="gallery-item" data-lightbox="./assets/interior-living.png">
-          <img src="./assets/interior-living.png" alt="Living room with wood-burning stove and original stone walls" loading="lazy" width="800" height="600">
+        <!-- The House (7) -->
+        <div class="gallery-item gallery-item--tall" data-category="house" data-lightbox="./assets/own-house-front-summer.jpg">
+          <img src="./assets/own-house-front-summer.jpg" alt="Close-up of stone front with hydrangeas and sage green door" loading="lazy" width="800" height="1000">
+          <span class="gallery-item-label">Front Entrance</span>
+        </div>
+        <div class="gallery-item" data-category="house" data-lightbox="./assets/own-house-front-portrait.jpg">
+          <img src="./assets/own-house-front-portrait.jpg" alt="Full front view of Tyddyn Eglwys rectory with flower gardens and gravel drive" loading="lazy" width="800" height="1000">
+          <span class="gallery-item-label">The Rectory</span>
+        </div>
+        <div class="gallery-item gallery-item--wide" data-category="house" data-lightbox="./assets/own-front-entrance.jpg">
+          <img src="./assets/own-front-entrance.jpg" alt="Front entrance showing stone walls, slate porch, and hydrangea at dusk" loading="lazy" width="1024" height="576">
+          <span class="gallery-item-label">Entrance at Dusk</span>
+        </div>
+        <div class="gallery-item" data-category="house" data-lightbox="./assets/own-exterior-garden.jpg">
+          <img src="./assets/own-exterior-garden.jpg" alt="Tyddyn Eglwys from the garden in summer evening light" loading="lazy" width="1024" height="576">
+          <span class="gallery-item-label">Summer Evening</span>
+        </div>
+        <div class="gallery-item" data-category="house" data-lightbox="./assets/own-exterior-veranda.jpg">
+          <img src="./assets/own-exterior-veranda.jpg" alt="Side view with covered veranda, slate roof, and gardens" loading="lazy" width="800" height="600">
+          <span class="gallery-item-label">Veranda</span>
+        </div>
+        <div class="gallery-item" data-category="house" data-lightbox="./assets/own-stone-barn.jpg">
+          <img src="./assets/own-stone-barn.jpg" alt="Historic stone barn on the lane" loading="lazy" width="800" height="600">
+          <span class="gallery-item-label">The Barn</span>
+        </div>
+        <div class="gallery-item" data-category="house" data-lightbox="./assets/own-property-sign.jpg">
+          <img src="./assets/own-property-sign.jpg" alt="Slate name sign reading Tyddyn Eglwys on a stone wall" loading="lazy" width="1200" height="675">
+          <span class="gallery-item-label">Tyddyn Eglwys</span>
+        </div>
+
+        <!-- Interiors (5) -->
+        <div class="gallery-item gallery-item--wide" data-category="interiors" data-lightbox="./assets/own-living-room.jpg">
+          <img src="./assets/own-living-room.jpg" alt="Dark-walled living room with gold Chesterfield sofa and chandelier" loading="lazy" width="840" height="460">
           <span class="gallery-item-label">Living Room</span>
         </div>
-        <div class="gallery-item" data-lightbox="./assets/bedroom.png">
-          <img src="./assets/bedroom.png" alt="Spacious bedroom with period features and countryside views" loading="lazy" width="800" height="600">
+        <div class="gallery-item gallery-item--tall" data-category="interiors" data-lightbox="./assets/own-fireplace-blue-room.jpg">
+          <img src="./assets/own-fireplace-blue-room.jpg" alt="Ornate black fireplace, TV in gold frame, deep blue walls" loading="lazy" width="800" height="1000">
+          <span class="gallery-item-label">Blue Room</span>
+        </div>
+        <div class="gallery-item" data-category="interiors" data-lightbox="./assets/own-grandfather-clock.jpg">
+          <img src="./assets/own-grandfather-clock.jpg" alt="Grandfather clock, oil painting, and cast-iron radiator in hallway" loading="lazy" width="800" height="500">
+          <span class="gallery-item-label">Period Details</span>
+        </div>
+        <div class="gallery-item" data-category="interiors" data-lightbox="./assets/own-window-birdcage.jpg">
+          <img src="./assets/own-window-birdcage.jpg" alt="Deep windowsill with decorative birdcage and lanterns" loading="lazy" width="800" height="500">
+          <span class="gallery-item-label">Window Seat</span>
+        </div>
+        <div class="gallery-item" data-category="interiors" data-lightbox="./assets/own-bedroom-detail.jpg">
+          <img src="./assets/own-bedroom-detail.jpg" alt="Coral wall with round mirror and fireplace mantel" loading="lazy" width="800" height="600">
           <span class="gallery-item-label">Bedroom</span>
         </div>
-        <div class="gallery-item" data-lightbox="./assets/kitchen.png">
-          <img src="./assets/kitchen.png" alt="Fully equipped kitchen with modern appliances" loading="lazy" width="800" height="600">
-          <span class="gallery-item-label">Kitchen</span>
-        </div>
-        <div class="gallery-item" data-lightbox="./assets/hot-tub.png">
-          <img src="./assets/hot-tub.png" alt="Private hot tub with mountain views" loading="lazy" width="800" height="600">
+
+        <!-- Gardens (8) -->
+        <div class="gallery-item" data-category="gardens" data-lightbox="./assets/own-hot-tub.jpg">
+          <img src="./assets/own-hot-tub.jpg" alt="Cedar hot tub against stone gable wall" loading="lazy" width="840" height="460">
           <span class="gallery-item-label">Hot Tub</span>
         </div>
-        <div class="gallery-item" data-lightbox="./assets/exterior.png">
-          <img src="./assets/exterior.png" alt="Stone exterior of the rectory set among mature gardens" loading="lazy" width="800" height="600">
-          <span class="gallery-item-label">Exterior</span>
+        <div class="gallery-item gallery-item--wide" data-category="gardens" data-lightbox="./assets/own-tipi-night.jpg">
+          <img src="./assets/own-tipi-night.jpg" alt="Canvas tipi with festoon lights glowing at twilight" loading="lazy" width="1024" height="576">
+          <span class="gallery-item-label">Garden at Night</span>
+        </div>
+        <div class="gallery-item" data-category="gardens" data-lightbox="./assets/own-tipi-cows-garden.jpg">
+          <img src="./assets/own-tipi-cows-garden.jpg" alt="Garden with tipi, fire pit, and cows grazing beyond the stone wall" loading="lazy" width="800" height="500">
+          <span class="gallery-item-label">Tipi &amp; Neighbours</span>
+        </div>
+        <div class="gallery-item" data-category="gardens" data-lightbox="./assets/own-garden-tipi.jpg">
+          <img src="./assets/own-garden-tipi.jpg" alt="Wider view of garden with hot tub and tipi" loading="lazy" width="840" height="460">
+          <span class="gallery-item-label">Garden &amp; Hot Tub</span>
+        </div>
+        <div class="gallery-item gallery-item--tall" data-category="gardens" data-lightbox="./assets/own-rhododendron.jpg">
+          <img src="./assets/own-rhododendron.jpg" alt="Purple rhododendron arch in full bloom" loading="lazy" width="800" height="1200">
+          <span class="gallery-item-label">Rhododendrons</span>
+        </div>
+        <div class="gallery-item" data-category="gardens" data-lightbox="./assets/own-crocosmia.jpg">
+          <img src="./assets/own-crocosmia.jpg" alt="Red crocosmia flowers blooming in the garden" loading="lazy" width="800" height="600">
+          <span class="gallery-item-label">Crocosmia</span>
+        </div>
+        <div class="gallery-item" data-category="gardens" data-lightbox="./assets/own-firepit-view.jpg">
+          <img src="./assets/own-firepit-view.jpg" alt="Metal archway with agapanthus pots and rhododendron hedge" loading="lazy" width="800" height="600">
+          <span class="gallery-item-label">Garden Arch</span>
+        </div>
+        <div class="gallery-item" data-category="gardens" data-lightbox="./assets/own-black-cow.jpg">
+          <img src="./assets/own-black-cow.jpg" alt="Close-up of black cow by the stone wall" loading="lazy" width="800" height="600">
+          <span class="gallery-item-label">Local Resident</span>
+        </div>
+
+        <!-- Landscape (7) -->
+        <div class="gallery-item gallery-item--wide" data-category="landscape" data-lightbox="./assets/own-hero-vista.jpg">
+          <img src="./assets/own-hero-vista.jpg" alt="Cycling lane with dry stone wall, estuary and mountains beyond" loading="lazy" width="1200" height="675">
+          <span class="gallery-item-label">Mountain Road</span>
+        </div>
+        <div class="gallery-item" data-category="landscape" data-lightbox="./assets/own-mountain-vista-2.jpg">
+          <img src="./assets/own-mountain-vista-2.jpg" alt="Rolling green hills with misty mountains beyond" loading="lazy" width="1024" height="576">
+          <span class="gallery-item-label">Snowdonia Views</span>
+        </div>
+        <div class="gallery-item gallery-item--tall" data-category="landscape" data-lightbox="./assets/own-rainbow-estuary.jpg">
+          <img src="./assets/own-rainbow-estuary.jpg" alt="Rainbow arching over the Dwyryd estuary" loading="lazy" width="800" height="1200">
+          <span class="gallery-item-label">Rainbow over the Estuary</span>
+        </div>
+        <div class="gallery-item" data-category="landscape" data-lightbox="./assets/own-lake.jpg">
+          <img src="./assets/own-lake.jpg" alt="Peaceful lake surrounded by rolling hills" loading="lazy" width="800" height="600">
+          <span class="gallery-item-label">Llyn Tecwyn Isaf</span>
+        </div>
+        <div class="gallery-item gallery-item--wide" data-category="landscape" data-lightbox="./assets/own-estuary-sunset.jpg">
+          <img src="./assets/own-estuary-sunset.jpg" alt="Marshland and estuary with dramatic sunset clouds" loading="lazy" width="1200" height="675">
+          <span class="gallery-item-label">Estuary at Dusk</span>
+        </div>
+        <div class="gallery-item" data-category="landscape" data-lightbox="./assets/own-mossy-stream.jpg">
+          <img src="./assets/own-mossy-stream.jpg" alt="Moss-covered rocks in a shaded woodland stream" loading="lazy" width="800" height="600">
+          <span class="gallery-item-label">Woodland Stream</span>
+        </div>
+        <div class="gallery-item" data-category="landscape" data-lightbox="./assets/own-snow-mountains.jpg">
+          <img src="./assets/own-snow-mountains.jpg" alt="Snow-capped mountain peaks from a distance" loading="lazy" width="1024" height="576">
+          <span class="gallery-item-label">Winter Mountains</span>
+        </div>
+
+        <!-- Beaches & Coast (5) -->
+        <div class="gallery-item gallery-item--wide" data-category="coast" data-lightbox="./assets/own-harlech-beach.jpg">
+          <img src="./assets/own-harlech-beach.jpg" alt="Pristine golden sands stretching into the distance at Harlech" loading="lazy" width="1200" height="675">
+          <span class="gallery-item-label">Harlech Beach</span>
+        </div>
+        <div class="gallery-item" data-category="coast" data-lightbox="./assets/own-harlech-beach-wide.jpg">
+          <img src="./assets/own-harlech-beach-wide.jpg" alt="Wide panoramic beach with dramatic clouds" loading="lazy" width="1200" height="675">
+          <span class="gallery-item-label">Golden Sands</span>
+        </div>
+        <div class="gallery-item" data-category="coast" data-lightbox="./assets/own-rocky-beach.jpg">
+          <img src="./assets/own-rocky-beach.jpg" alt="Rocky outcrop with sandy estuary at low tide" loading="lazy" width="800" height="600">
+          <span class="gallery-item-label">Estuary Shore</span>
+        </div>
+        <div class="gallery-item gallery-item--tall" data-category="coast" data-lightbox="./assets/own-sunset-beach.jpg">
+          <img src="./assets/own-sunset-beach.jpg" alt="Silhouettes walking a dog on the sands at sunset" loading="lazy" width="800" height="1200">
+          <span class="gallery-item-label">Sunset Walk</span>
+        </div>
+        <div class="gallery-item" data-category="coast" data-lightbox="./assets/own-fishing-estuary.jpg">
+          <img src="./assets/own-fishing-estuary.jpg" alt="Fishing on the estuary shore under dramatic clouds" loading="lazy" width="1024" height="576">
+          <span class="gallery-item-label">Evening Fishing</span>
+        </div>
+
+        <!-- Attractions (5) -->
+        <div class="gallery-item gallery-item--wide" data-category="attractions" data-lightbox="./assets/own-portmeirion.jpg">
+          <img src="./assets/own-portmeirion.jpg" alt="Pastel buildings of Portmeirion reflected in estuary water" loading="lazy" width="1200" height="675">
+          <span class="gallery-item-label">Portmeirion</span>
+        </div>
+        <div class="gallery-item gallery-item--tall" data-category="attractions" data-lightbox="./assets/own-harlech-castle.jpg">
+          <img src="./assets/own-harlech-castle.jpg" alt="Harlech Castle towers against a blue sky" loading="lazy" width="800" height="1200">
+          <span class="gallery-item-label">Harlech Castle</span>
+        </div>
+        <div class="gallery-item" data-category="attractions" data-lightbox="./assets/own-harlech-castle-rocks.jpg">
+          <img src="./assets/own-harlech-castle-rocks.jpg" alt="Harlech Castle from rocky hillside with Snowdonia behind" loading="lazy" width="1024" height="576">
+          <span class="gallery-item-label">Castle &amp; Mountains</span>
+        </div>
+        <div class="gallery-item" data-category="attractions" data-lightbox="./assets/own-harlech-sunset.jpg">
+          <img src="./assets/own-harlech-sunset.jpg" alt="Harlech Castle and coast bathed in golden hour light" loading="lazy" width="1024" height="576">
+          <span class="gallery-item-label">Harlech at Sunset</span>
+        </div>
+        <div class="gallery-item" data-category="attractions" data-lightbox="./assets/own-beddgelert.jpg">
+          <img src="./assets/own-beddgelert.jpg" alt="Stone bridge and village of Beddgelert beside a rocky stream" loading="lazy" width="800" height="600">
+          <span class="gallery-item-label">Beddgelert</span>
         </div>
       </div>
     </div>
@@ -224,10 +401,10 @@
           <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 32l10-16 8 10 6-8 8 14H4z"/><circle cx="30" cy="10" r="3"/></svg>
           <span class="amenity-name">Mountain Views</span>
         </div>
-        <!-- Wood Burner -->
+        <!-- Fire Pit -->
         <div class="amenity-card">
-          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="10" y="16" width="20" height="16" rx="2"/><path d="M14 16V12a6 6 0 0112 0v4"/><path d="M20 22c-1 2-1 4 0 6M17 24c0 2 1 3 2 4M23 24c0 2-1 3-2 4"/></svg>
-          <span class="amenity-name">Wood Burner</span>
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><ellipse cx="20" cy="30" rx="12" ry="4"/><path d="M20 14c-2 3-4 6-4 10M20 14c2 3 4 6 4 10"/><path d="M20 10c-1 2-2 4-2 6s1 3 2 4c1-1 2-2 2-4s-1-4-2-6z" fill="currentColor" opacity="0.2"/><path d="M17 18c0 3 1.5 5 3 7"/><path d="M23 18c0 3-1.5 5-3 7"/></svg>
+          <span class="amenity-name">Fire Pit</span>
         </div>
         <!-- Free WiFi -->
         <div class="amenity-card">
@@ -269,12 +446,177 @@
           <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="8" y="6" width="24" height="28" rx="3"/><circle cx="20" cy="22" r="7"/><circle cx="20" cy="22" r="3"/><circle cx="14" cy="10" r="1.5" fill="currentColor" opacity="0.4"/><line x1="20" y1="10" x2="28" y2="10"/></svg>
           <span class="amenity-name">Washing Machine</span>
         </div>
+        <!-- EV Charger -->
+        <div class="amenity-card">
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="16" height="24" rx="2"/><path d="M14 8V5M20 8V5"/><path d="M16 16l-2 5h4l-2 5"/><path d="M24 18h4a2 2 0 012 2v6a2 2 0 01-2 2h-4"/></svg>
+          <span class="amenity-name">EV Charger</span>
+          <span class="amenity-note">On request</span>
+        </div>
+        <!-- Tipi -->
+        <div class="amenity-card">
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L8 34h24L20 6z"/><path d="M20 6v28"/><path d="M16 34c0-4 2-8 4-12"/><path d="M24 34c0-4-2-8-4-12"/></svg>
+          <span class="amenity-name">Tipi</span>
+          <span class="amenity-note">Summer months</span>
+        </div>
+        <!-- Hammock -->
+        <div class="amenity-card">
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 12c4 0 8 10 14 10s10-10 14-10"/><path d="M6 12v4M34 12v4"/><path d="M10 16c3 0 6 8 10 8s7-8 10-8" opacity="0.4"/></svg>
+          <span class="amenity-name">Hammock</span>
+          <span class="amenity-note">Summer months</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== YOUR STAY ========== -->
+  <section class="section-padding" id="your-stay" style="background: var(--color-surface);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Guest Information</span>
+        <h2 class="section-title">Your Stay</h2>
+        <p class="section-subtitle">Everything you need to know for a comfortable and relaxing visit.</p>
+      </div>
+
+      <div class="accordion reveal" id="guestAccordion">
+
+        <!-- Arrival & Access -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <div class="accordion-header-content">
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span>Arrival &amp; Access</span>
+            </div>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <ul>
+                <li>Turn off the <strong>A496</strong> by the red dragon, then drive up the single-track road. Carry straight on — do <em>not</em> take the first right.</li>
+                <li>Cross the cattle grid, pass the barn on your left, and you’ll arrive at the entrance gate.</li>
+                <li>Your <strong>lockbox</strong> is to the right of the porch, within the window area. The access code will be sent via text on the day of arrival.</li>
+                <li><strong>Sat nav warning:</strong> it may suggest turning right — ignore this and carry straight on, looking for the cattle grid.</li>
+                <li>Watch for sheep, lambs and cows along the lane — they may greet you on arrival!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Check-in & Check-out -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <div class="accordion-header-content">
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span>Check-in &amp; Check-out</span>
+            </div>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <ul>
+                <li><strong>Check-in:</strong> Between 4:00 PM and 6:00 PM</li>
+                <li><strong>Check-out:</strong> By 10:00 AM</li>
+                <li>If you need to arrive or depart outside these times, please request at least <strong>48 hours</strong> in advance.</li>
+                <li>If you haven’t arrived by 6 PM on your arrival day, access may not be available until the following day.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dogs -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <div class="accordion-header-content">
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><ellipse cx="8" cy="8" rx="2" ry="3"/><ellipse cx="16" cy="8" rx="2" ry="3"/><ellipse cx="4" cy="14" rx="1.5" ry="2.5"/><ellipse cx="20" cy="14" rx="1.5" ry="2.5"/><path d="M8 19c0 3 2 5 4 5s4-2 4-5c0-2-2-4-4-4s-4 2-4 4z"/></svg>
+              <span>Dogs</span>
+            </div>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <ul>
+                <li>Maximum <strong>2 dogs</strong> — ground floor only, not on furniture (including sofas).</li>
+                <li>Keep dogs on a lead if they’re capable of jumping walls — the property is surrounded by farming fields.</li>
+                <li><strong>Lambing season:</strong> November to June — please be especially vigilant.</li>
+                <li>Keep the entrance gate closed at all times to prevent livestock entering.</li>
+                <li>A dog pen is available in the utility room.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hot Tub -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <div class="accordion-header-content">
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 14h16M6 14v4a3 3 0 003 3h6a3 3 0 003-3v-4"/><path d="M8 10c0-1.5 1.5-2 1.5-3.5M12 10c0-1.5 1.5-2 1.5-3.5M16 10c0-1.5 1.5-2 1.5-3.5"/></svg>
+              <span>Hot Tub</span>
+            </div>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <ul>
+                <li><strong>Included free</strong> for stays of 7 nights or more. <strong>£150</strong> supplement for shorter stays.</li>
+                <li>Available <strong>April to August</strong> only.</li>
+                <li>Turn on the electric heating on arrival — it takes approximately <strong>4 hours</strong> to reach temperature.</li>
+                <li>Maximum temperature: <strong>37°C</strong>. Turn off heating once at temperature.</li>
+                <li>Please cover the tub when not in use.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- House Essentials -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <div class="accordion-header-content">
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/><path d="M12 14v2"/></svg>
+              <span>House Essentials</span>
+            </div>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <ul>
+                <li><strong>WiFi</strong> details sent on arrival. Connection is strong but may briefly drop due to the thick stone walls.</li>
+                <li><strong>Heating:</strong> Nest thermostat is pre-programmed and maintains a comfortable temperature.</li>
+                <li><strong>Hot water:</strong> Press the boost button (black button, green light) on arrival — takes about an hour.</li>
+                <li><strong>Kitchen:</strong> Range cooker (please use the hood fan), dishwasher, washer/dryer. <em>Do not use the Aga</em> — it is switched off and may trip the electrics.</li>
+                <li><strong>TV</strong> is in the blue room — log in with your own streaming accounts and log out when you leave.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- House Rules -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <div class="accordion-header-content">
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <span>House Rules</span>
+            </div>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <ul>
+                <li>Maximum <strong>8 guests</strong>. No parties or events.</li>
+                <li><strong>Quiet hours:</strong> 10:00 PM – 7:00 AM.</li>
+                <li>No smoking or vaping in or around the property. No candles.</li>
+                <li>Do not use the fireplaces — they are not working fireplaces.</li>
+                <li>3 external security cameras (front entrance, rear, and EV charger).</li>
+                <li>Recycling: please sort into the labelled bins. Collection day is Tuesday — bins out Monday evening.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- ========== LOCAL AREA ========== -->
-  <section class="section-padding" id="local-area" style="background: var(--color-surface);">
+  <section class="section-padding" id="local-area">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Explore</span>
@@ -285,7 +627,7 @@
       <div class="local-area-grid reveal">
         <div class="attraction-card">
           <div class="attraction-card-image">
-            <img src="./assets/portmeirion.png" alt="The colourful Italianate village of Portmeirion" loading="lazy" width="800" height="500">
+            <img src="./assets/own-portmeirion.jpg" alt="Portmeirion village from the water — pastel buildings with turquoise shutters reflected in the estuary" loading="lazy" width="800" height="500">
           </div>
           <div class="attraction-card-body">
             <h3>Portmeirion Village</h3>
@@ -299,7 +641,7 @@
 
         <div class="attraction-card">
           <div class="attraction-card-image">
-            <img src="./assets/harlech-castle.png" alt="The dramatic silhouette of Harlech Castle against a sunset sky" loading="lazy" width="800" height="500">
+            <img src="./assets/own-harlech-sunset.jpg" alt="Harlech Castle at golden hour — medieval fortress silhouetted against a sunset sky with the coast stretching below" loading="lazy" width="800" height="500">
           </div>
           <div class="attraction-card-body">
             <h3>Harlech Castle</h3>
@@ -307,6 +649,34 @@
             <span class="attraction-distance">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               11 km away
+            </span>
+          </div>
+        </div>
+
+        <div class="attraction-card">
+          <div class="attraction-card-image">
+            <img src="./assets/own-harlech-beach-wide.jpg" alt="Wide Harlech beach with dramatic clouds, golden sand stretching to the distant headland" loading="lazy" width="800" height="500">
+          </div>
+          <div class="attraction-card-body">
+            <h3>Estuary Beaches</h3>
+            <p>Golden sands stretch for miles along the Dwyryd estuary and Cardigan Bay coast. Perfect for sunset walks, dog-friendly beaches, and Shell Island — one of Wales's best-kept secrets.</p>
+            <span class="attraction-distance">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              5 km away
+            </span>
+          </div>
+        </div>
+
+        <div class="attraction-card">
+          <div class="attraction-card-image">
+            <img src="./assets/own-beddgelert.jpg" alt="The stone bridge and stone-built village of Beddgelert beside a rocky stream" loading="lazy" width="800" height="500">
+          </div>
+          <div class="attraction-card-body">
+            <h3>Beddgelert</h3>
+            <p>One of Snowdonia's prettiest villages, where the Glaslyn and Colwyn rivers meet beneath a medieval stone bridge. Charming cafes, riverside walks, and the legendary tale of Gelert the hound.</p>
+            <span class="attraction-distance">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              22 km away
             </span>
           </div>
         </div>
@@ -362,6 +732,392 @@
     </div>
   </section>
 
+  <!-- ========== CYCLING & WALKING ========== -->
+  <section class="activities-section" id="activities">
+
+    <!-- Hero Banner -->
+    <div class="activities-hero">
+      <div class="activities-hero-img">
+        <img src="./assets/own-hero-vista.jpg" alt="Cycling lane alongside dry stone wall with Snowdonia mountains beyond" loading="lazy">
+      </div>
+      <div class="activities-hero-overlay"></div>
+      <div class="activities-hero-content reveal">
+        <span class="section-label" style="color: rgba(255,255,255,0.8);">Cycling &amp; Walking</span>
+        <h2 class="activities-hero-title">Your Base for Adventure</h2>
+        <p class="activities-hero-subtitle">From gentle estuary trails to epic mountain passes — the finest routes in Eryri start right on your doorstep.</p>
+      </div>
+    </div>
+
+    <!-- Toggle Bar -->
+    <div class="section-padding" style="background: var(--color-bg);">
+      <div class="container">
+        <div class="activities-toggle reveal">
+          <button class="activities-toggle-btn active" data-activity-tab="cycling" aria-pressed="true">Cycling</button>
+          <button class="activities-toggle-btn" data-activity-tab="walking" aria-pressed="false">Walking</button>
+        </div>
+
+        <!-- CYCLING ROUTES -->
+        <div class="activities-routes" id="cyclingRoutes">
+
+          <!-- Route 1: Mawddach Trail -->
+          <article class="route-card reveal">
+            <div class="route-card-image">
+              <img src="./assets/activity-mawddach-trail.jpg" alt="Scenic Mawddach Trail path along the estuary" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--easy">Easy</span>
+                <span class="route-distance">18 miles round trip</span>
+                <span class="route-drive">40 min drive</span>
+              </div>
+              <h3 class="route-card-title">Mawddach Trail</h3>
+              <p class="route-card-tagline">Family Favourite</p>
+              <p class="route-card-desc">One of Britain's most scenic cycle paths. Follows the disused railway line along the spectacular Mawddach Estuary, crossing the iconic 19th-century Barmouth Bridge. Flat and car-free, with stunning views of Cadair Idris.</p>
+              <a href="https://mawddachtrail.co.uk/" target="_blank" rel="noopener noreferrer" class="route-card-link">View Route <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Route 2: Lôn Las Cymru -->
+          <article class="route-card route-card--reverse reveal">
+            <div class="route-card-image">
+              <img src="./assets/own-mountain-vista-2.jpg" alt="Rolling Welsh hills and mountain views" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--moderate">Moderate</span>
+                <span class="route-distance">~15 miles</span>
+                <span class="route-drive">7 min drive</span>
+              </div>
+              <h3 class="route-card-title">Lôn Las Cymru — Harlech Section</h3>
+              <p class="route-card-tagline">NCN Route 8</p>
+              <p class="route-card-desc">Part of the 250-mile national cycle route traversing Wales. The Harlech section delivers a lung-busting climb rewarded by incredible views over the Dwyryd Estuary. Quiet country lanes and some traffic-free sections through to Porthmadog.</p>
+              <a href="https://cycle.travel/route/lon_las_cymru" target="_blank" rel="noopener noreferrer" class="route-card-link">View Route <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Route 3: Coed-y-Brenin -->
+          <article class="route-card reveal">
+            <div class="route-card-image">
+              <img src="./assets/activity-cycling-road.jpg" alt="Road cyclist on dramatic Snowdonia mountain pass" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--easy">Easy to Expert</span>
+                <span class="route-distance">6.7 – 25+ miles</span>
+                <span class="route-drive">40 min drive</span>
+              </div>
+              <h3 class="route-card-title">Coed-y-Brenin Mountain Biking</h3>
+              <p class="route-card-tagline">Britain's Premier MTB Centre</p>
+              <p class="route-card-desc">Britain's first purpose-built mountain bike centre in the heart of Snowdonia. Multiple graded trails through ancient forest, from the gentle Yr Afon family trail to the technical MBR. Café, bike wash, and full facilities on site.</p>
+              <a href="https://naturalresources.wales/days-out/places-to-visit/coed-y-brenin/" target="_blank" rel="noopener noreferrer" class="route-card-link">View Route <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Route 4: Lôn Eifion -->
+          <article class="route-card route-card--reverse reveal">
+            <div class="route-card-image">
+              <img src="./assets/activity-cycling-wales.jpg" alt="Group cycling on Welsh mountain road" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--easy">Easy</span>
+                <span class="route-distance">12.5 miles one way</span>
+                <span class="route-drive">45 min drive</span>
+              </div>
+              <h3 class="route-card-title">Lôn Eifion Cycleway</h3>
+              <p class="route-card-tagline">Caernarfon to Bryncir</p>
+              <p class="route-card-desc">A lovely traffic-free path following the Welsh Highland Railway from Caernarfon Castle southwards. Views across Caernarfon Bay to Anglesey, passing through quiet villages with great views of Snowdon. Perfect for families.</p>
+              <a href="https://www.walkwheelcycletrust.org.uk/" target="_blank" rel="noopener noreferrer" class="route-card-link">View Route <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Route 5: Snowdon Loop -->
+          <article class="route-card reveal">
+            <div class="route-card-image">
+              <img src="./assets/own-harlech-castle-rocks.jpg" alt="Harlech Castle from rocky hillside" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--hard">Challenging</span>
+                <span class="route-distance">29 miles loop</span>
+                <span class="route-drive">30–40 min drive</span>
+              </div>
+              <h3 class="route-card-title">Snowdon Loop</h3>
+              <p class="route-card-tagline">Epic Road Cycling</p>
+              <p class="route-card-desc">An epic road ride circling Snowdon itself. Climbs the famous Llanberis Pass, descends to Beddgelert past Lake Llyn Gwynant, then follows the dramatic road past Lake Llyn Cwellyn. Spectacular mountain scenery throughout.</p>
+              <a href="https://epicroadrides.com/cycling-blog/cycling-snowdonia-wales/" target="_blank" rel="noopener noreferrer" class="route-card-link">View Route <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- WALKING ROUTES -->
+        <div class="activities-routes activities-routes--hidden" id="walkingRoutes">
+
+          <!-- Walk 1: Roman Steps -->
+          <article class="route-card reveal">
+            <div class="route-card-image">
+              <img src="./assets/own-mountain-vista-2.jpg" alt="Rolling hills and mountains of the Rhinogydd" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--hard">Moderate to Hard</span>
+                <span class="route-distance">8 miles circular</span>
+                <span class="route-drive">20 min drive</span>
+              </div>
+              <h3 class="route-card-title">The Roman Steps &amp; Rhinogydd</h3>
+              <p class="route-card-tagline">Wild Mountain Walking</p>
+              <p class="route-card-desc">Medieval packhorse steps climbing through the wild Rhinogydd mountains — Snowdonia's most rugged and least-visited range, right on the doorstep. Ancient woodlands, boggy marshland, pre-historic cairns, and absolutely stunning views.</p>
+              <a href="https://www.visitwales.com/things-do/adventure-and-activities/walking/walking-trails-and-around-harlech" target="_blank" rel="noopener noreferrer" class="route-card-link">View Route <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Walk 2: Wales Coast Path -->
+          <article class="route-card route-card--reverse reveal">
+            <div class="route-card-image">
+              <img src="./assets/own-harlech-beach-wide.jpg" alt="Panoramic view of Harlech Beach" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--moderate">Moderate</span>
+                <span class="route-distance">16–27 km (sections)</span>
+                <span class="route-drive">5 min drive</span>
+              </div>
+              <h3 class="route-card-title">Wales Coast Path: Harlech to Barmouth</h3>
+              <p class="route-card-tagline">Coastal Walking</p>
+              <p class="route-card-desc">Stunning coastal walking along golden sands, through dune systems, salt marshes, and with dramatic views across Cardigan Bay. The classic view looking back at Harlech Castle above the beach is unforgettable. Hop on/off via the Cambrian Coast railway.</p>
+              <a href="https://www.walkthewalescoastpath.co.uk/routes/walk-the-wales-coast-path-from-harlech-to-barmouth/" target="_blank" rel="noopener noreferrer" class="route-card-link">View Route <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Walk 3: Yr Wyddfa (Snowdon) -->
+          <article class="route-card reveal">
+            <div class="route-card-image">
+              <img src="./assets/activity-hiking-summit.jpg" alt="Hikers at the summit of Snowdon" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--hard">Hard</span>
+                <span class="route-distance">7.5 miles return</span>
+                <span class="route-drive">40 min drive</span>
+              </div>
+              <h3 class="route-card-title">Yr Wyddfa (Snowdon) — Rhyd Ddu Path</h3>
+              <p class="route-card-tagline">The Quietest Summit Route</p>
+              <p class="route-card-desc">The quietest route to the summit of Wales's highest peak at 3,560 ft. Less crowded than the popular Llanberis and Pyg/Miners' tracks. Steady climb with awe-inspiring views, viaducts, waterfalls, gorges, and remnants of abandoned farms.</p>
+              <a href="https://www.mountain-walks.co.uk/snowdon-routes/" target="_blank" rel="noopener noreferrer" class="route-card-link">View Route <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Walk 4: Gelert's Grave -->
+          <article class="route-card route-card--reverse reveal">
+            <div class="route-card-image">
+              <img src="./assets/activity-walking-trail.jpg" alt="Walkers on a trail along the Mawddach estuary" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--easy">Easy</span>
+                <span class="route-distance">2 miles return</span>
+                <span class="route-drive">25 min drive</span>
+              </div>
+              <h3 class="route-card-title">Gelert's Grave Walk</h3>
+              <p class="route-card-tagline">Beddgelert Village</p>
+              <p class="route-card-desc">A gentle walk from one of Snowdonia's prettiest villages along the banks of the River Glaslyn to the legendary grave of Gelert the hound. Beautiful riverside scenery, easy path suitable for all ages. Combine with the village cafes and Aberglaslyn Pass.</p>
+              <a href="https://www.nationaltrust.org.uk/visit/wales/walking/top-10-walks-in-snowdonia" target="_blank" rel="noopener noreferrer" class="route-card-link">View Route <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Walk 5: Taith Ardudwy Way -->
+          <article class="route-card reveal">
+            <div class="route-card-image">
+              <img src="./assets/activity-mawddach-bridge.jpg" alt="Panoramic view from Barmouth Bridge on the Mawddach estuary" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--hard">Hard</span>
+                <span class="route-distance">24 miles (multi-day)</span>
+                <span class="route-drive">10 min drive</span>
+              </div>
+              <h3 class="route-card-title">Taith Ardudwy Way</h3>
+              <p class="route-card-tagline">Long-Distance Challenge</p>
+              <p class="route-card-desc">A long-distance route traversing upland terrain, following remote pathways linking pre-historic sites. Spectacular views over Cardigan Bay and the Rhinogydd mountains. Base yourselves at Tyddyn Eglwys and split into several sections over 2–3 days.</p>
+              <a href="https://www.visitwales.com/things-do/adventure-and-activities/walking/walking-trails-and-around-harlech" target="_blank" rel="noopener noreferrer" class="route-card-link">View Route <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="activities-cta reveal">
+          <div class="activities-cta-inner">
+            <h3 class="activities-cta-title">Ready to explore?</h3>
+            <p class="activities-cta-text">After a day on the trails, unwind in the private hot tub under the stars. Tygwyn station is a 10-minute walk — perfect for car-free trail access on the Cambrian Coast line.</p>
+            <a href="#booking" class="btn-primary">Check Availability</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DINING ========== -->
+  <section class="section-padding" id="dining" style="background: var(--color-surface);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Dining</span>
+        <h2 class="section-title">Where to Eat</h2>
+        <p class="section-subtitle">Our favourite local restaurants, cafes, and fish &amp; chip shops — all within easy reach.</p>
+      </div>
+
+      <!-- Restaurants -->
+      <div class="dining-category reveal">
+        <h3 class="dining-category-title">Restaurants</h3>
+        <p class="dining-category-note">We recommend booking in advance for all restaurants.</p>
+        <div class="dining-grid">
+          <a href="https://www.robinsonsbrewery.com/pubs/victoria-inn-llanbedr/" target="_blank" rel="noopener noreferrer" class="dining-card">
+            <div class="dining-card-info">
+              <h4>Victoria Inn</h4>
+              <p>Llanbedr</p>
+            </div>
+            <span class="dining-card-time">12 min</span>
+          </a>
+          <a href="https://www.hafanartro.co.uk/" target="_blank" rel="noopener noreferrer" class="dining-card">
+            <div class="dining-card-info">
+              <h4>Hafan Artro</h4>
+              <p>Llanbedr</p>
+            </div>
+            <span class="dining-card-time">12 min</span>
+          </a>
+          <a href="https://www.henfecws.com/" target="_blank" rel="noopener noreferrer" class="dining-card">
+            <div class="dining-card-info">
+              <h4>Yr Hen Fecws</h4>
+              <p>Porthmadog · Very popular</p>
+            </div>
+            <span class="dining-card-time">15 min</span>
+          </a>
+          <a href="https://ysgwar-restaurant.co.uk/" target="_blank" rel="noopener noreferrer" class="dining-card">
+            <div class="dining-card-info">
+              <h4>Y Sgwar</h4>
+              <p>Tremadog</p>
+            </div>
+            <span class="dining-card-time">15 min</span>
+          </a>
+          <a href="https://dylansrestaurant.co.uk/restaurant/book-a-table" target="_blank" rel="noopener noreferrer" class="dining-card">
+            <div class="dining-card-info">
+              <h4>Dylan’s Restaurant</h4>
+              <p>Barmouth &amp; Criccieth · Seafood</p>
+            </div>
+            <span class="dining-card-time">20–25 min</span>
+          </a>
+          <a href="https://portmeirion.wales/eat/castell-deudraeth" target="_blank" rel="noopener noreferrer" class="dining-card">
+            <div class="dining-card-info">
+              <h4>Castell Deudraeth</h4>
+              <p>Portmeirion · Brasserie</p>
+            </div>
+            <span class="dining-card-time">15 min</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Cafes -->
+      <div class="dining-category reveal">
+        <h3 class="dining-category-title">Cafes &amp; Coffee</h3>
+        <div class="dining-grid">
+          <a href="https://thebigrock.co.uk/pages/about-us" target="_blank" rel="noopener noreferrer" class="dining-card">
+            <div class="dining-card-info">
+              <h4>The Big Rock Cafe</h4>
+              <p>Porthmadog</p>
+            </div>
+            <span class="dining-card-time">15 min</span>
+          </a>
+          <a href="https://llewglas.uk/cafe/" target="_blank" rel="noopener noreferrer" class="dining-card">
+            <div class="dining-card-info">
+              <h4>Caffi Llew Glas</h4>
+              <p>Harlech</p>
+            </div>
+            <span class="dining-card-time">7 min</span>
+          </a>
+          <a href="https://www.cafficastell.co.uk/" target="_blank" rel="noopener noreferrer" class="dining-card">
+            <div class="dining-card-info">
+              <h4>Caffi Castell Harlech</h4>
+              <p>Inside the castle</p>
+            </div>
+            <span class="dining-card-time">5 min</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Fish & Chips -->
+      <div class="dining-category reveal">
+        <h3 class="dining-category-title">Fish &amp; Chips</h3>
+        <div class="dining-grid">
+          <div class="dining-card">
+            <div class="dining-card-info">
+              <h4>The Creel</h4>
+              <p>Porthmadog High Street</p>
+            </div>
+            <span class="dining-card-time">15 min</span>
+          </div>
+          <div class="dining-card">
+            <div class="dining-card-info">
+              <h4>The Schooner</h4>
+              <p>Morfa Bychan</p>
+            </div>
+            <span class="dining-card-time">20 min</span>
+          </div>
+          <div class="dining-card dining-card-tip">
+            <div class="dining-card-info">
+              <h4>Black Rock Sands</h4>
+              <p>Drive onto the beach, grab fish &amp; chips, watch the sunset</p>
+            </div>
+            <span class="dining-card-badge">Local tip</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shopping -->
+      <div class="dining-category reveal">
+        <h3 class="dining-category-title">Shopping &amp; Provisions</h3>
+        <div class="dining-grid">
+          <div class="dining-card">
+            <div class="dining-card-info">
+              <h4>Premier</h4>
+              <p>Off A494, Harlech Beach road</p>
+            </div>
+            <span class="dining-card-time">3 min</span>
+          </div>
+          <div class="dining-card">
+            <div class="dining-card-info">
+              <h4>Y Groser Harlech</h4>
+              <p>Local produce, fresh bread, cakes</p>
+            </div>
+            <span class="dining-card-time">5 min</span>
+          </div>
+          <div class="dining-card">
+            <div class="dining-card-info">
+              <h4>Tesco / Aldi / Lidl</h4>
+              <p>Porthmadog</p>
+            </div>
+            <span class="dining-card-time">15 min</span>
+          </div>
+          <div class="dining-card">
+            <div class="dining-card-info">
+              <h4>Cig Porthmadog Meats</h4>
+              <p>105 High Street, Porthmadog</p>
+            </div>
+            <span class="dining-card-time">15 min</span>
+          </div>
+          <div class="dining-card">
+            <div class="dining-card-info">
+              <h4>Blas Y Mor Fishmonger</h4>
+              <p>82 High Street, Porthmadog</p>
+            </div>
+            <span class="dining-card-time">15 min</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== BOOKING ========== -->
   <section class="section-padding" id="booking">
     <div class="container">
@@ -399,9 +1155,10 @@
         <div class="booking-summary">
           <h3>Your Stay</h3>
           <div class="price-display">
-            <span class="price-amount">£185</span>
+            <span class="price-amount">from £300</span>
             <span class="price-unit">/ night</span>
           </div>
+          <p style="font-size: var(--text-xs); color: var(--color-text-faint); text-align: center; margin-top: calc(-1 * var(--space-2)); margin-bottom: var(--space-3);">£300 Sun–Thu · £350 Fri &amp; Sat · Min 3 nights</p>
 
           <div class="date-inputs">
             <div class="date-input-group">
@@ -425,21 +1182,26 @@
 
           <div class="price-breakdown" id="priceBreakdown" style="display:none;">
             <div class="price-line">
-              <span id="nightsLabel">£185 × 0 nights</span>
+              <span id="nightsLabel">0 nights</span>
               <span id="nightsCost">£0</span>
             </div>
-            <div class="price-line">
-              <span>Cleaning fee</span>
-              <span>£75</span>
+            <div id="weekdayLine" class="price-line" style="display:none;">
+              <span id="weekdayLabel">Weekday nights (Sun–Thu)</span>
+              <span id="weekdayCost">£0</span>
+            </div>
+            <div id="weekendLine" class="price-line" style="display:none;">
+              <span id="weekendLabel">Weekend nights (Fri–Sat)</span>
+              <span id="weekendCost">£0</span>
             </div>
             <div class="price-total">
               <span>Total</span>
               <span id="totalCost">£0</span>
             </div>
           </div>
+          <p class="min-stay-warning" id="minStayWarning" style="display:none; font-size: var(--text-xs); color: #c0392b; text-align: center; margin-top: var(--space-2);">Minimum stay is 3 nights</p>
 
           <button class="book-now-btn" id="bookNowBtn" disabled>Book Now</button>
-          <p style="font-size: var(--text-xs); color: var(--color-text-faint); text-align: center; margin-top: var(--space-3);">Check-in: 4pm · Check-out: 10am</p>
+          <p style="font-size: var(--text-xs); color: var(--color-text-faint); text-align: center; margin-top: var(--space-3);">Check-in: 4–6pm · Check-out: by 10am · Min 3 nights</p>
         </div>
       </div>
     </div>
@@ -451,16 +1213,36 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#" class="logo" style="margin-bottom: var(--space-2);">
-            <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M18 4C12 4 7 12 7 20c0 4 2 7 4 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M18 4c6 0 11 8 11 16 0 4-2 7-4 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M11 29h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M18 20v9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
-              <circle cx="18" cy="16" r="2" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.6"/>
+            <svg class="logo-mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <clipPath id="fLogoClip"><circle cx="100" cy="100" r="82"/></clipPath>
+                <linearGradient id="fLogSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6b9ac4"/><stop offset="60%" stop-color="#a8cce0"/><stop offset="100%" stop-color="#cde4d0"/></linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="98" fill="none" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="100" cy="100" r="92" fill="#f5f1eb"/>
+              <g clip-path="url(#fLogoClip)">
+                <rect x="0" y="0" width="200" height="200" fill="url(#fLogSky)"/>
+                <ellipse cx="100" cy="168" rx="110" ry="48" fill="#7aaa70"/><ellipse cx="100" cy="175" rx="100" ry="40" fill="#8aba80"/><ellipse cx="100" cy="182" rx="95" ry="35" fill="#9ac890"/>
+                <g><ellipse cx="35" cy="115" rx="18" ry="24" fill="#3a7a3a"/><ellipse cx="28" cy="120" rx="14" ry="20" fill="#2d6a2d"/><ellipse cx="42" cy="118" rx="12" ry="18" fill="#4a8a4a"/></g>
+                <g><ellipse cx="165" cy="115" rx="18" ry="24" fill="#3a7a3a"/><ellipse cx="172" cy="120" rx="14" ry="20" fill="#2d6a2d"/><ellipse cx="158" cy="118" rx="12" ry="18" fill="#4a8a4a"/></g>
+                <g>
+                  <rect x="60" y="90" width="80" height="28" fill="#7a7060"/>
+                  <rect x="60" y="118" width="80" height="36" fill="#e8dcc8"/>
+                  <polygon points="57,90 100,68 143,90" fill="#3a3530"/>
+                  <rect x="66" y="64" width="10" height="20" fill="#5a5550"/><rect x="64" y="62" width="14" height="3" fill="#4a4540"/>
+                  <rect x="124" y="64" width="10" height="20" fill="#5a5550"/><rect x="122" y="62" width="14" height="3" fill="#4a4540"/>
+                  <rect x="67" y="94" width="9" height="13" fill="#c8d4dc"/><rect x="85" y="94" width="9" height="13" fill="#c8d4dc"/>
+                  <rect x="106" y="94" width="9" height="13" fill="#c8d4dc"/><rect x="124" y="94" width="9" height="13" fill="#c8d4dc"/>
+                  <rect x="65" y="123" width="13" height="18" fill="#c8d4dc"/><rect x="122" y="123" width="13" height="18" fill="#c8d4dc"/>
+                  <rect x="94" y="125" width="12" height="29" rx="1" fill="#2d5a3d"/>
+                </g>
+                <g transform="translate(90,147)"><ellipse cx="0" cy="0" rx="12" ry="6" fill="#1a1a1a"/><ellipse cx="-11" cy="-3" rx="4.5" ry="3.5" fill="#1a1a1a"/><rect x="-7" y="4" width="2.5" height="8" fill="#1a1a1a"/><rect x="-2" y="4" width="2.5" height="8" fill="#1a1a1a"/><rect x="4" y="4" width="2.5" height="8" fill="#1a1a1a"/><rect x="8" y="4" width="2.5" height="8" fill="#1a1a1a"/></g>
+              </g>
             </svg>
             <span class="logo-text">Tyddyn Eglwys</span>
           </a>
-          <p>A Grade II listed former rectory dating to c.1830, nestled in the quiet hamlet of Ynys, in the heart of Eryri National Park.</p>
+          <p>A Grade II listed former rectory built in 1839, nestled in the quiet hamlet of Ynys, in the heart of Eryri National Park.</p>
+          <p class="footer-hosts">Your hosts: Victoria &amp; Matt</p>
         </div>
 
         <div class="footer-col">
@@ -469,7 +1251,10 @@
             <li><a href="#about">About</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#your-stay">Your Stay</a></li>
             <li><a href="#local-area">Local Area</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#dining">Dining</a></li>
             <li><a href="#booking">Book</a></li>
           </ul>
         </div>
@@ -526,7 +1311,6 @@
         <div class="modal-summary-line"><span>Dates</span><span id="modalDates">—</span></div>
         <div class="modal-summary-line"><span>Guests</span><span id="modalGuests">—</span></div>
         <div class="modal-summary-line"><span>Accommodation</span><span id="modalAccom">—</span></div>
-        <div class="modal-summary-line"><span>Cleaning fee</span><span>£75</span></div>
         <div class="modal-summary-total"><span>Total</span><span id="modalTotal">—</span></div>
       </div>
 
