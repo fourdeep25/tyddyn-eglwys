@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tyddyn Eglwys — Grade II Listed Retreat in Snowdonia</title>
+  <meta name="description" content="Tyddyn Eglwys is a beautifully restored Grade II listed former rectory dating to c.1830, nestled in the heart of Snowdonia National Park. Sleeps 8, with hot tub, mountain views, and direct access to Eryri's finest landscapes.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tyddyn Eglwys — A Grade II Listed Retreat in Snowdonia">
+  <meta property="og:description" content="A beautifully restored former Welsh rectory dating to c.1830. 4 bedrooms, hot tub, mountain views. In the heart of Eryri National Park.">
+  <meta property="og:image" content="./assets/hero-landscape.png">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link href="https://api.fontshare.com/v2/css?f[]=erode@300,400,500,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;450;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Stripe (demo) -->
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Tyddyn Eglwys",
+    "description": "Grade II listed former Welsh rectory dating to c.1830, nestled in the heart of Snowdonia/Eryri National Park.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ynys",
+      "addressLocality": "Talsarnau",
+      "addressRegion": "Gwynedd",
+      "postalCode": "LL47 6TL",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.8957,
+      "longitude": -4.0475
+    },
+    "image": "./assets/hero-landscape.png",
+    "priceRange": "From £185/night",
+    "numberOfRooms": 4,
+    "petsAllowed": true,
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Hot Tub", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Free Parking", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Mountain Views", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Pet Friendly", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Wood-Burning Stove", "value": true }
+    ],
+    "checkinTime": "16:00",
+    "checkoutTime": "10:00"
+  }
+  </script>
+
+  <!-- Favicon (inline SVG data URI) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'%3E%3Cpath d='M16 4L6 18h4l-2 10L26 14h-4l2-10z' stroke='%232d5a3d' stroke-width='2' fill='%232d5a3d' fill-opacity='0.15'/%3E%3Cpath d='M10 28c0-6 3-10 6-12 3 2 6 6 6 12' stroke='%232d5a3d' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="Tyddyn Eglwys — Home">
+        <!-- SVG Logo Mark: Welsh stone arch / mountain silhouette -->
+        <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M18 4C12 4 7 12 7 20c0 4 2 7 4 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M18 4c6 0 11 8 11 16 0 4-2 7-4 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M11 29h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M18 20v9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+          <circle cx="18" cy="16" r="2" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.6"/>
+        </svg>
+        <span class="logo-text">Tyddyn Eglwys</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#local-area">Local Area</a>
+        <a href="#booking">Book</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#amenities">Amenities</a>
+    <a href="#local-area">Local Area</a>
+    <a href="#booking">Book</a>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-image">
+      <img src="./assets/hero-landscape.png" alt="Panoramic view of Tyddyn Eglwys with Snowdonia mountains in the background" loading="eager" width="1600" height="900">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-label">Ynys, Talsarnau · Snowdonia</span>
+      <h1>Tyddyn Eglwys</h1>
+      <p class="hero-tagline">A Grade II Listed Retreat in the Heart of Snowdonia</p>
+      <a href="#booking" class="btn-primary">
+        Check Availability
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section-padding" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">The Rectory</span>
+        <h2 class="section-title">A Story Carved in Stone</h2>
+        <p class="section-subtitle">Step into nearly two centuries of Welsh heritage, beautifully restored for modern comfort.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <img src="./assets/exterior.png" alt="Exterior of Tyddyn Eglwys, a stone-built Grade II listed rectory" loading="lazy" width="800" height="600">
+        </div>
+        <div class="about-text reveal reveal-delay-1">
+          <p>Tyddyn Eglwys is a Grade II listed former rectory dating to circa 1830, set in the quiet hamlet of Ynys, near Talsarnau in Gwynedd. Built from local Snowdonian stone, this handsome building has served its community for nearly two centuries — and now welcomes guests seeking a deeper connection with the Welsh landscape.</p>
+          <p>The rectory has been thoughtfully restored to preserve its historic character — original stone walls, deep windowsills, and period features — while offering all the comforts of a modern retreat. A wood-burning stove warms the living room on cooler evenings, while the private hot tub offers views across the Dwyryd estuary to the mountains beyond.</p>
+          <p>With Eryri (Snowdonia) National Park on your doorstep, Portmeirion a short drive away, and Harlech's castle perched above some of Wales's finest beaches, Tyddyn Eglwys is the perfect base for exploring the very best of North Wales.</p>
+
+          <div class="about-facts">
+            <div class="about-fact">
+              <span class="about-fact-number">4</span>
+              <span class="about-fact-label">Bedrooms</span>
+            </div>
+            <div class="about-fact">
+              <span class="about-fact-number">8</span>
+              <span class="about-fact-label">Guests</span>
+            </div>
+            <div class="about-fact">
+              <span class="about-fact-number">2</span>
+              <span class="about-fact-label">Bathrooms</span>
+            </div>
+            <div class="about-fact">
+              <span class="about-fact-number">c.1830</span>
+              <span class="about-fact-label">Built</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="section-padding" id="gallery" style="background: var(--color-surface);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Gallery</span>
+        <h2 class="section-title">Inside & Out</h2>
+        <p class="section-subtitle">Original character meets contemporary comfort across four bedrooms, spacious living areas, and private grounds.</p>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item" data-lightbox="./assets/interior-living.png">
+          <img src="./assets/interior-living.png" alt="Living room with wood-burning stove and original stone walls" loading="lazy" width="800" height="600">
+          <span class="gallery-item-label">Living Room</span>
+        </div>
+        <div class="gallery-item" data-lightbox="./assets/bedroom.png">
+          <img src="./assets/bedroom.png" alt="Spacious bedroom with period features and countryside views" loading="lazy" width="800" height="600">
+          <span class="gallery-item-label">Bedroom</span>
+        </div>
+        <div class="gallery-item" data-lightbox="./assets/kitchen.png">
+          <img src="./assets/kitchen.png" alt="Fully equipped kitchen with modern appliances" loading="lazy" width="800" height="600">
+          <span class="gallery-item-label">Kitchen</span>
+        </div>
+        <div class="gallery-item" data-lightbox="./assets/hot-tub.png">
+          <img src="./assets/hot-tub.png" alt="Private hot tub with mountain views" loading="lazy" width="800" height="600">
+          <span class="gallery-item-label">Hot Tub</span>
+        </div>
+        <div class="gallery-item" data-lightbox="./assets/exterior.png">
+          <img src="./assets/exterior.png" alt="Stone exterior of the rectory set among mature gardens" loading="lazy" width="800" height="600">
+          <span class="gallery-item-label">Exterior</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AMENITIES ========== -->
+  <section class="section-padding" id="amenities">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Amenities</span>
+        <h2 class="section-title">Everything You Need</h2>
+        <p class="section-subtitle">Historic charm with modern comforts — every detail considered for your stay.</p>
+      </div>
+
+      <div class="amenities-grid reveal">
+        <!-- Hot Tub -->
+        <div class="amenity-card">
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 24h24M10 24v6a4 4 0 004 4h12a4 4 0 004-4v-6"/><path d="M14 18c0-2 2-3 2-5M20 18c0-2 2-3 2-5M26 18c0-2 2-3 2-5"/></svg>
+          <span class="amenity-name">Hot Tub</span>
+        </div>
+        <!-- Mountain Views -->
+        <div class="amenity-card">
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 32l10-16 8 10 6-8 8 14H4z"/><circle cx="30" cy="10" r="3"/></svg>
+          <span class="amenity-name">Mountain Views</span>
+        </div>
+        <!-- Wood Burner -->
+        <div class="amenity-card">
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="10" y="16" width="20" height="16" rx="2"/><path d="M14 16V12a6 6 0 0112 0v4"/><path d="M20 22c-1 2-1 4 0 6M17 24c0 2 1 3 2 4M23 24c0 2-1 3-2 4"/></svg>
+          <span class="amenity-name">Wood Burner</span>
+        </div>
+        <!-- Free WiFi -->
+        <div class="amenity-card">
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 18a16 16 0 0124 0M12 22a10 10 0 0116 0M16 26a5 5 0 018 0"/><circle cx="20" cy="30" r="1.5" fill="currentColor"/></svg>
+          <span class="amenity-name">Free WiFi</span>
+        </div>
+        <!-- Free Parking -->
+        <div class="amenity-card">
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="14" width="28" height="14" rx="3"/><circle cx="12" cy="28" r="3"/><circle cx="28" cy="28" r="3"/><path d="M10 14l3-6h14l3 6"/></svg>
+          <span class="amenity-name">Free Parking</span>
+        </div>
+        <!-- Pet Friendly -->
+        <div class="amenity-card">
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><ellipse cx="14" cy="12" rx="3" ry="4"/><ellipse cx="26" cy="12" rx="3" ry="4"/><ellipse cx="8" cy="20" rx="2.5" ry="3.5"/><ellipse cx="32" cy="20" rx="2.5" ry="3.5"/><path d="M13 26c0 4 3 8 7 8s7-4 7-8c0-3-3-6-7-6s-7 3-7 6z"/></svg>
+          <span class="amenity-name">Pet Friendly</span>
+        </div>
+        <!-- Kitchen -->
+        <div class="amenity-card">
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="8" y="8" width="24" height="24" rx="2"/><line x1="8" y1="20" x2="32" y2="20"/><circle cx="16" cy="27" r="2"/><circle cx="24" cy="27" r="2"/><path d="M16 14h8"/></svg>
+          <span class="amenity-name">Equipped Kitchen</span>
+        </div>
+        <!-- BBQ Area -->
+        <div class="amenity-card">
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="10" y="14" width="20" height="10" rx="2"/><path d="M14 24v8M26 24v8M10 18h20"/><path d="M16 10c0-2 1-3 1-4M20 10c0-2 1-3 1-4M24 10c0-2 1-3 1-4"/></svg>
+          <span class="amenity-name">BBQ Area</span>
+        </div>
+        <!-- Garden -->
+        <div class="amenity-card">
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M20 34V20"/><path d="M20 20c-6-1-10-6-8-12 4 2 8 6 8 12z"/><path d="M20 24c5-2 8-7 6-13-4 1-7 6-6 13z"/><path d="M14 34h12"/></svg>
+          <span class="amenity-name">Garden</span>
+        </div>
+        <!-- Streaming -->
+        <div class="amenity-card">
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="6" y="10" width="28" height="18" rx="2"/><path d="M16 32h8M20 28v4"/><path d="M17 19l6-3.5v7z" fill="currentColor" opacity="0.3" stroke="currentColor"/></svg>
+          <span class="amenity-name">Streaming Services</span>
+        </div>
+        <!-- Washing Machine -->
+        <div class="amenity-card">
+          <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="8" y="6" width="24" height="28" rx="3"/><circle cx="20" cy="22" r="7"/><circle cx="20" cy="22" r="3"/><circle cx="14" cy="10" r="1.5" fill="currentColor" opacity="0.4"/><line x1="20" y1="10" x2="28" y2="10"/></svg>
+          <span class="amenity-name">Washing Machine</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOCAL AREA ========== -->
+  <section class="section-padding" id="local-area" style="background: var(--color-surface);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Explore</span>
+        <h2 class="section-title">On Your Doorstep</h2>
+        <p class="section-subtitle">From fairy-tale villages to medieval castles, Snowdonia's finest experiences are just minutes away.</p>
+      </div>
+
+      <div class="local-area-grid reveal">
+        <div class="attraction-card">
+          <div class="attraction-card-image">
+            <img src="./assets/portmeirion.png" alt="The colourful Italianate village of Portmeirion" loading="lazy" width="800" height="500">
+          </div>
+          <div class="attraction-card-body">
+            <h3>Portmeirion Village</h3>
+            <p>The enchanting Italianate village created by Sir Clough Williams-Ellis. A whimsical world of colourful buildings, subtropical gardens, and sweeping estuary views — famously the setting for The Prisoner.</p>
+            <span class="attraction-distance">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              9.4 km away
+            </span>
+          </div>
+        </div>
+
+        <div class="attraction-card">
+          <div class="attraction-card-image">
+            <img src="./assets/harlech-castle.png" alt="The dramatic silhouette of Harlech Castle against a sunset sky" loading="lazy" width="800" height="500">
+          </div>
+          <div class="attraction-card-body">
+            <h3>Harlech Castle</h3>
+            <p>Edward I's mighty fortress, a UNESCO World Heritage Site perched dramatically above the coast. One of the finest examples of medieval military architecture in Europe, with commanding views of the Llŷn Peninsula and Snowdonia.</p>
+            <span class="attraction-distance">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              11 km away
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="local-text-list reveal">
+        <h3>More to Discover</h3>
+        <div class="local-text-items">
+          <div class="local-text-item">
+            <svg class="local-text-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <div class="local-text-item-content">
+              <h4>Zip World</h4>
+              <p>Europe's longest zip line and underground adventure experiences in Snowdonia's former slate quarries.</p>
+            </div>
+          </div>
+          <div class="local-text-item">
+            <svg class="local-text-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            <div class="local-text-item-content">
+              <h4>Ffestiniog Railway</h4>
+              <p>Heritage steam railway winding through 13 miles of stunning Snowdonian scenery from Porthmadog to Blaenau Ffestiniog.</p>
+            </div>
+          </div>
+          <div class="local-text-item">
+            <svg class="local-text-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><path d="M20 8l2 2-2 2"/><path d="M3 8L1 10l2 2"/><circle cx="9" cy="7" r="4"/></svg>
+            <div class="local-text-item-content">
+              <h4>Snowdon / Yr Wyddfa</h4>
+              <p>Wales's highest peak offers multiple walking routes from gentle paths to dramatic ridges. The Snowdon Mountain Railway also runs to the summit.</p>
+            </div>
+          </div>
+          <div class="local-text-item">
+            <svg class="local-text-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 20c2-2 4-6 4-10a6 6 0 0112 0c0 4 2 8 4 10"/><path d="M6 20h12"/></svg>
+            <div class="local-text-item-content">
+              <h4>Beaches</h4>
+              <p>Harlech Beach's vast golden sands, Shell Island, and the quieter coves of the Llŷn Peninsula are all within easy reach.</p>
+            </div>
+          </div>
+          <div class="local-text-item">
+            <svg class="local-text-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <div class="local-text-item-content">
+              <h4>Tygwyn Station</h4>
+              <p>Just 720 metres from the property — direct rail access to the Cambrian Coast line and connections throughout Wales.</p>
+            </div>
+          </div>
+          <div class="local-text-item">
+            <svg class="local-text-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+            <div class="local-text-item-content">
+              <h4>Walking & Cycling</h4>
+              <p>Miles of trails from gentle estuary walks to challenging mountain circuits. The area is a walker's and cyclist's paradise.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BOOKING ========== -->
+  <section class="section-padding" id="booking">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Availability</span>
+        <h2 class="section-title">Plan Your Stay</h2>
+        <p class="section-subtitle">Select your dates below to check availability and pricing.</p>
+      </div>
+
+      <div class="booking-layout reveal">
+        <!-- Calendar -->
+        <div class="calendar-container">
+          <div class="calendar-header">
+            <h3 class="calendar-title" id="calendarTitle">April 2026</h3>
+            <div class="calendar-nav">
+              <button id="calPrev" aria-label="Previous month">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button id="calNext" aria-label="Next month">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="calendar-grid" id="calendarGrid">
+            <!-- Populated by JS -->
+          </div>
+          <div class="calendar-legend">
+            <div class="legend-item"><span class="legend-dot available"></span> Available</div>
+            <div class="legend-item"><span class="legend-dot unavailable"></span> Unavailable</div>
+            <div class="legend-item"><span class="legend-dot selected"></span> Selected</div>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="booking-summary">
+          <h3>Your Stay</h3>
+          <div class="price-display">
+            <span class="price-amount">£185</span>
+            <span class="price-unit">/ night</span>
+          </div>
+
+          <div class="date-inputs">
+            <div class="date-input-group">
+              <label>Check-in</label>
+              <div class="date-value placeholder" id="checkinDisplay">Select date</div>
+            </div>
+            <div class="date-input-group">
+              <label>Check-out</label>
+              <div class="date-value placeholder" id="checkoutDisplay">Select date</div>
+            </div>
+          </div>
+
+          <div class="guest-selector">
+            <label>Guests</label>
+            <div class="guest-counter">
+              <button id="guestMinus" aria-label="Decrease guests" disabled>−</button>
+              <span class="guest-count" id="guestCount">2 guests</span>
+              <button id="guestPlus" aria-label="Increase guests">+</button>
+            </div>
+          </div>
+
+          <div class="price-breakdown" id="priceBreakdown" style="display:none;">
+            <div class="price-line">
+              <span id="nightsLabel">£185 × 0 nights</span>
+              <span id="nightsCost">£0</span>
+            </div>
+            <div class="price-line">
+              <span>Cleaning fee</span>
+              <span>£75</span>
+            </div>
+            <div class="price-total">
+              <span>Total</span>
+              <span id="totalCost">£0</span>
+            </div>
+          </div>
+
+          <button class="book-now-btn" id="bookNowBtn" disabled>Book Now</button>
+          <p style="font-size: var(--text-xs); color: var(--color-text-faint); text-align: center; margin-top: var(--space-3);">Check-in: 4pm · Check-out: 10am</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer section-padding" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo" style="margin-bottom: var(--space-2);">
+            <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M18 4C12 4 7 12 7 20c0 4 2 7 4 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M18 4c6 0 11 8 11 16 0 4-2 7-4 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M11 29h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M18 20v9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+              <circle cx="18" cy="16" r="2" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.6"/>
+            </svg>
+            <span class="logo-text">Tyddyn Eglwys</span>
+          </a>
+          <p>A Grade II listed former rectory dating to c.1830, nestled in the quiet hamlet of Ynys, in the heart of Eryri National Park.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#local-area">Local Area</a></li>
+            <li><a href="#booking">Book</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>House Rules</h4>
+          <ul>
+            <li><a href="#booking">Check-in: 4:00 PM</a></li>
+            <li><a href="#booking">Check-out: 10:00 AM</a></li>
+            <li><a href="#booking">Pets welcome</a></li>
+            <li><a href="#booking">No smoking indoors</a></li>
+            <li><a href="#booking">Max 8 guests</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:stay@tyddyneglwys.com">stay@tyddyneglwys.com</a></li>
+            <li><a href="tel:+441234567890">+44 1234 567 890</a></li>
+            <li>Ynys, Talsarnau</li>
+            <li>Gwynedd LL47 6TL</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Tyddyn Eglwys &copy; 2026. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012 7.5v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== BOOKING MODAL ========== -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal" style="position: relative;">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h2>Complete Your Booking</h2>
+      <p class="modal-subtitle">You're almost there — fill in your details below.</p>
+
+      <div class="modal-summary" id="modalSummary">
+        <div class="modal-summary-line"><span>Dates</span><span id="modalDates">—</span></div>
+        <div class="modal-summary-line"><span>Guests</span><span id="modalGuests">—</span></div>
+        <div class="modal-summary-line"><span>Accommodation</span><span id="modalAccom">—</span></div>
+        <div class="modal-summary-line"><span>Cleaning fee</span><span>£75</span></div>
+        <div class="modal-summary-total"><span>Total</span><span id="modalTotal">—</span></div>
+      </div>
+
+      <form id="bookingForm" onsubmit="return false;">
+        <div class="form-group">
+          <label for="guestName">Full Name</label>
+          <input type="text" id="guestName" required placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="guestEmail">Email</label>
+          <input type="email" id="guestEmail" required placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label for="guestPhone">Phone</label>
+          <input type="tel" id="guestPhone" placeholder="+44 7700 000000">
+        </div>
+        <div class="form-group">
+          <label for="guestMessage">Message (optional)</label>
+          <textarea id="guestMessage" placeholder="Any special requests or questions?"></textarea>
+        </div>
+        <button type="button" class="stripe-btn" id="stripePayBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          Pay with Stripe
+        </button>
+        <p class="stripe-demo-note">Demo mode — this uses a Stripe test key. No real charges will be made.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close lightbox">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <img src="" alt="Full-size gallery image" id="lightboxImg">
+  </div>
+
+  <!-- ========== BACK TO TOP ========== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="./app.js"></script>
+</body>
+</html>
