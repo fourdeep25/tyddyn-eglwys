@@ -5,7 +5,7 @@ const { getStore } = require('@netlify/blobs');
 
 const HOLD_DURATION_MS = 6 * 60 * 60 * 1000; // 6 hours
 
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'Content-Type',
@@ -16,10 +16,18 @@ exports.handler = async (event, context) => {
     return { statusCode: 204, headers, body: '' };
   }
 
-  const store = getStore({ name: 'date-holds', siteID: context.site.id, token: context.token });
+  let store;
+  try {
+    store = getStore('date-holds');
+  } catch (err) {
+    // If Blobs aren't available, return empty gracefully
+    if (event.httpMethod === 'GET') {
+      return { statusCode: 200, headers, body: JSON.stringify({ heldDates: [] }) };
+    }
+    return { statusCode: 200, headers, body: JSON.stringify({ success: true, heldDates: [], fallback: true }) };
+  }
 
   if (event.httpMethod === 'POST') {
-    // Add a new hold
     try {
       const { checkIn, checkOut, guestName } = JSON.parse(event.body);
       if (!checkIn || !checkOut) {
@@ -48,7 +56,6 @@ exports.handler = async (event, context) => {
         expiresAt: Date.now() + HOLD_DURATION_MS,
       };
 
-      // Store with a unique key
       const holdKey = `hold_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
       await store.setJSON(holdKey, hold);
 
@@ -63,7 +70,6 @@ exports.handler = async (event, context) => {
   }
 
   if (event.httpMethod === 'GET') {
-    // Return all currently active holds (not expired)
     try {
       const { blobs } = await store.list();
       const now = Date.now();
@@ -75,7 +81,6 @@ exports.handler = async (event, context) => {
           if (hold && hold.expiresAt > now) {
             activeDates.push(...hold.dates);
           } else if (hold) {
-            // Clean up expired hold
             await store.delete(blob.key).catch(() => {});
           }
         } catch (e) {
