@@ -184,22 +184,39 @@
   let guestCountVal = 2;
   let selectingCheckOut = false;
 
-  // Blocked dates (simulate some unavailable dates)
-  const blockedDates = new Set([
-    '2026-04-10', '2026-04-11', '2026-04-12', '2026-04-13',
-    '2026-04-24', '2026-04-25', '2026-04-26',
-    '2026-05-01', '2026-05-02', '2026-05-03', '2026-05-04',
-    '2026-05-15', '2026-05-16', '2026-05-17',
-    '2026-05-29', '2026-05-30', '2026-05-31',
-    '2026-06-12', '2026-06-13', '2026-06-14', '2026-06-15', '2026-06-16',
-    '2026-06-26', '2026-06-27', '2026-06-28',
-    '2026-07-04', '2026-07-05', '2026-07-06', '2026-07-07',
-    '2026-07-18', '2026-07-19', '2026-07-20', '2026-07-21', '2026-07-22',
-    '2026-08-01', '2026-08-02', '2026-08-03', '2026-08-04', '2026-08-05',
-    '2026-08-06', '2026-08-07',
-    '2026-08-15', '2026-08-16', '2026-08-17', '2026-08-18',
-    '2026-08-28', '2026-08-29', '2026-08-30',
-  ]);
+  // Blocked dates — populated from Airbnb iCal via Netlify function
+  let blockedDates = new Set();
+  let calendarSynced = false;
+
+  // Fetch availability from Airbnb via serverless function
+  async function syncCalendar() {
+    try {
+      const res = await fetch('/.netlify/functions/calendar-sync');
+      if (!res.ok) throw new Error('Sync failed');
+      const data = await res.json();
+      if (data.blockedDates && data.blockedDates.length > 0) {
+        blockedDates = new Set(data.blockedDates);
+        calendarSynced = true;
+        renderCalendar(); // Re-render with real availability
+        // Update sync indicator
+        const indicator = document.getElementById('syncIndicator');
+        if (indicator) {
+          indicator.textContent = 'Live availability · Synced with Airbnb';
+          indicator.classList.add('synced');
+        }
+      }
+    } catch (e) {
+      // Graceful fallback — show all dates as available
+      console.log('Calendar sync unavailable, showing all dates as available');
+      const indicator = document.getElementById('syncIndicator');
+      if (indicator) {
+        indicator.textContent = 'Availability may not be up to date';
+      }
+    }
+  }
+
+  // Call sync on load
+  syncCalendar();
 
   const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'];
