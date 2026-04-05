@@ -723,12 +723,13 @@
     <div class="section-padding" style="background: var(--color-bg);">
       <div class="container">
         <div class="activities-toggle reveal">
-          <button class="activities-toggle-btn active" data-activity-tab="cycling" aria-pressed="true">Cycling</button>
+          <button class="activities-toggle-btn active" data-activity-tab="roadCycling" aria-pressed="true">Road Cycling</button>
+          <button class="activities-toggle-btn" data-activity-tab="mtb" aria-pressed="false">Mountain Biking</button>
           <button class="activities-toggle-btn" data-activity-tab="walking" aria-pressed="false">Walking</button>
         </div>
 
-        <!-- CYCLING ROUTES -->
-        <div class="activities-routes" id="cyclingRoutes">
+        <!-- ROAD CYCLING ROUTES -->
+        <div class="activities-routes" id="roadCyclingRoutes">
 
           <!-- Route 1: Mawddach Trail -->
           <article class="route-card reveal">
@@ -766,21 +767,21 @@
             </div>
           </article>
 
-          <!-- Route 3: Coed-y-Brenin -->
+          <!-- Route 3: Cob Crwn -->
           <article class="route-card reveal">
             <div class="route-card-image">
-              <img src="./assets/activity-cycling-road.jpg" alt="Road cyclist on dramatic Snowdonia mountain pass" loading="lazy">
+              <img src="./assets/activity-cycling-road.jpg" alt="Road cycling through Aberglaslyn Pass towards Beddgelert" loading="lazy">
             </div>
             <div class="route-card-content">
               <div class="route-card-meta">
-                <span class="route-badge route-badge--easy">Easy to Expert</span>
-                <span class="route-distance">6.7 – 25+ miles</span>
-                <span class="route-drive">40 min drive</span>
+                <span class="route-badge route-badge--moderate">Moderate</span>
+                <span class="route-distance">24 km return</span>
+                <span class="route-drive">15 min drive</span>
               </div>
-              <h3 class="route-card-title">Coed-y-Brenin Mountain Biking</h3>
-              <p class="route-card-tagline">Britain's Premier MTB Centre</p>
-              <p class="route-card-desc">Britain's first purpose-built mountain bike centre in the heart of Snowdonia. Multiple graded trails through ancient forest, from the gentle Yr Afon family trail to the technical MBR. Café, bike wash, and full facilities on site.</p>
-              <a href="https://naturalresources.wales/days-out/places-to-visit/coed-y-brenin/" target="_blank" rel="noopener noreferrer" class="route-card-link">View Route <span aria-hidden="true">&rarr;</span></a>
+              <h3 class="route-card-title">Cob Crwn — Porthmadog to Beddgelert</h3>
+              <p class="route-card-tagline">Scenic Valley Ride</p>
+              <p class="route-card-desc">Follow quiet roads from Porthmadog through Aberglaslyn Pass to the picture-postcard village of Beddgelert. Dramatic scenery through a narrow gorge with the Glaslyn river below. Return the same way or extend to Llyn Gwynant for a longer ride. Relatively flat with some gentle climbs.</p>
+              <a href="https://www.visitsnowdonia.info/easy-riders-snowdonia-cycle-routes-all-family" target="_blank" rel="noopener noreferrer" class="route-card-link">View Route <span aria-hidden="true">&rarr;</span></a>
             </div>
           </article>
 
@@ -817,6 +818,101 @@
               <p class="route-card-tagline">Epic Road Cycling</p>
               <p class="route-card-desc">An epic road ride circling Snowdon itself. Climbs the famous Llanberis Pass, descends to Beddgelert past Lake Llyn Gwynant, then follows the dramatic road past Lake Llyn Cwellyn. Spectacular mountain scenery throughout.</p>
               <a href="https://epicroadrides.com/cycling-blog/cycling-snowdonia-wales/" target="_blank" rel="noopener noreferrer" class="route-card-link">View Route <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- MOUNTAIN BIKING ROUTES -->
+        <div class="activities-routes activities-routes--hidden" id="mtbRoutes">
+
+          <!-- MTB 1: Coed y Brenin — Yr Afon -->
+          <article class="route-card reveal">
+            <div class="route-card-image">
+              <img src="./assets/activity-mtb-trail.jpg" alt="Mountain biker on singletrack through forest at Coed y Brenin" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--easy">Easy — Green</span>
+                <span class="route-distance">10.8 km</span>
+                <span class="route-drive">40 min drive</span>
+              </div>
+              <h3 class="route-card-title">Coed y Brenin — Yr Afon (Family Trail)</h3>
+              <p class="route-card-tagline">Perfect First Ride</p>
+              <p class="route-card-desc">The perfect introduction to mountain biking at the UK's premier trail centre. A gentle, flowing trail through ancient forest with smooth surfaces and no challenging features. Bike hire available from Beics Brenin on-site. Café, showers, and bike wash at the visitor centre.</p>
+              <a href="https://www.beicsbrenin.co.uk/trails/" target="_blank" rel="noopener noreferrer" class="route-card-link">View Trail <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- MTB 2: Coed y Brenin — Dragon's Back -->
+          <article class="route-card route-card--reverse reveal">
+            <div class="route-card-image">
+              <img src="./assets/activity-mtb-downhill.jpg" alt="Mountain biker on rocky descent through Welsh forest" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--moderate">Moderate — Red</span>
+                <span class="route-distance">31.1 km</span>
+                <span class="route-drive">40 min drive</span>
+              </div>
+              <h3 class="route-card-title">Coed y Brenin — Dragon's Back</h3>
+              <p class="route-card-tagline">Classic All-Day Epic</p>
+              <p class="route-card-desc">The classic Coed y Brenin epic. Over 30km of flowing singletrack through the forest with a great mix of climbs and descents, rocky sections, and sweeping berms. Allow 3–5 hours. Stunning views of the Mawddach Valley and Cadair Idris. One of the best all-day mountain bike rides in Wales.</p>
+              <a href="https://www.beicsbrenin.co.uk/trails/" target="_blank" rel="noopener noreferrer" class="route-card-link">View Trail <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- MTB 3: Antur Stiniog Bike Park -->
+          <article class="route-card reveal">
+            <div class="route-card-image">
+              <img src="./assets/activity-cycling-wales.jpg" alt="Downhill mountain biking at Antur Stiniog bike park" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--black">Green to Double Black</span>
+                <span class="route-distance">Multiple runs (uplift)</span>
+                <span class="route-drive">30 min drive</span>
+              </div>
+              <h3 class="route-card-title">Antur Stiniog Bike Park</h3>
+              <p class="route-card-tagline">Gravity Playground</p>
+              <p class="route-card-desc">One of the UK's best gravity-focused bike parks in Blaenau Ffestiniog. Uplift service means no pedalling — just ride down and shuttle back up. 14 downhill trails from gentle greens to the fearsome Black Power track. Expect flowy berms, tabletops, rocky descents, and big jumps. 10–15 descents possible in a day. Café on-site.</p>
+              <a href="https://www.anturstiniog.com/" target="_blank" rel="noopener noreferrer" class="route-card-link">View Trail <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- MTB 4: Gwydir Mawr Trail -->
+          <article class="route-card route-card--reverse reveal">
+            <div class="route-card-image">
+              <img src="./assets/own-mossy-stream.jpg" alt="Mossy stream in Gwydir Forest near Betws-y-Coed" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--moderate">Moderate — Red</span>
+                <span class="route-distance">25 km</span>
+                <span class="route-drive">45 min drive</span>
+              </div>
+              <h3 class="route-card-title">Gwydir Mawr Trail</h3>
+              <p class="route-card-tagline">Betws-y-Coed Classic</p>
+              <p class="route-card-desc">A 30-year-old classic winding through the beautiful Gwydir Forest near Betws-y-Coed. The 25km Gwydir Mawr loop incorporates the shorter 8.7km Gwydir Bach trail. Fantastic woodland singletrack with roots, rocks, and natural features. Accessible by train — passes within 1km of Llanrwst Station.</p>
+              <a href="https://www.mbwales.com/" target="_blank" rel="noopener noreferrer" class="route-card-link">View Trail <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- MTB 5: Coed y Brenin — MBR Trail -->
+          <article class="route-card reveal">
+            <div class="route-card-image">
+              <img src="./assets/activity-mtb-trail.jpg" alt="Mountain biker on technical singletrack at Coed y Brenin" loading="lazy">
+            </div>
+            <div class="route-card-content">
+              <div class="route-card-meta">
+                <span class="route-badge route-badge--black">Hard — Black</span>
+                <span class="route-distance">18.4 km</span>
+                <span class="route-drive">40 min drive</span>
+              </div>
+              <h3 class="route-card-title">Coed y Brenin — MBR Trail</h3>
+              <p class="route-card-tagline">World-Class Technical</p>
+              <p class="route-card-desc">A real favourite for experienced riders. A great mix of rocky gnarlyness, fast flowing singletrack, and modern trail features. Technical throughout with rock gardens, drops, and steep descents. The trail that put Coed y Brenin on the map as a world-class MTB destination. Allow 1.5–3 hours.</p>
+              <a href="https://www.beicsbrenin.co.uk/trails/" target="_blank" rel="noopener noreferrer" class="route-card-link">View Trail <span aria-hidden="true">&rarr;</span></a>
             </div>
           </article>
 

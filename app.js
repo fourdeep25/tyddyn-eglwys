@@ -585,10 +585,13 @@
 
   /* ── Activities Tab Toggle ── */
   const activityBtns = document.querySelectorAll('.activities-toggle-btn');
-  const cyclingRoutes = document.getElementById('cyclingRoutes');
-  const walkingRoutes = document.getElementById('walkingRoutes');
+  const activityPanels = {
+    roadCycling: document.getElementById('roadCyclingRoutes'),
+    mtb: document.getElementById('mtbRoutes'),
+    walking: document.getElementById('walkingRoutes')
+  };
 
-  if (activityBtns.length && cyclingRoutes && walkingRoutes) {
+  if (activityBtns.length && activityPanels.roadCycling && activityPanels.mtb && activityPanels.walking) {
     activityBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const tab = btn.getAttribute('data-activity-tab');
@@ -601,15 +604,19 @@
         btn.classList.add('active');
         btn.setAttribute('aria-pressed', 'true');
 
-        // Fade out current, show new
-        const showing = tab === 'cycling' ? cyclingRoutes : walkingRoutes;
-        const hiding = tab === 'cycling' ? walkingRoutes : cyclingRoutes;
+        // Hide all panels, then show the selected one
+        const showing = activityPanels[tab];
+        const hidingPanels = Object.values(activityPanels).filter(p => p !== showing);
 
-        hiding.classList.add('activities-routes--fade-out');
+        hidingPanels.forEach(panel => {
+          panel.classList.add('activities-routes--fade-out');
+        });
 
         setTimeout(() => {
-          hiding.classList.add('activities-routes--hidden');
-          hiding.classList.remove('activities-routes--fade-out');
+          hidingPanels.forEach(panel => {
+            panel.classList.add('activities-routes--hidden');
+            panel.classList.remove('activities-routes--fade-out');
+          });
 
           showing.classList.remove('activities-routes--hidden');
           // Trigger reflow then fade in
